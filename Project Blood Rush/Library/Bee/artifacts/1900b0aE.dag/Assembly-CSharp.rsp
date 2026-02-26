@@ -356,6 +356,9 @@
 "Assets/GameManager.cs"
 "Assets/InputHandler.cs"
 "Assets/PlayerMovement.cs"
+"Assets/PlayerObjectSelection.cs"
+"Assets/RayCastSelector.cs"
+"Assets/SelectableObject.cs"
 -langversion:9.0
 
 /deterministic
