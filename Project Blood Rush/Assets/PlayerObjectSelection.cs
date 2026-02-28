@@ -8,6 +8,9 @@ public class PlayerObjectSelection : MonoBehaviour
     public float maxDistance = 10f;  // How far the ray reaches
     public LayerMask interactableLayer; // Optional: only hit objects on certain layers
 
+    // track the last selectable the player was looking at so we can call OnUnhover
+    private SelectableObject lastSelectable;
+
     private void Update()
     {
         RaycastHit hit;
@@ -22,18 +25,45 @@ public class PlayerObjectSelection : MonoBehaviour
             GameObject hitObject = hit.collider.gameObject;
             Debug.Log("Looking at: " + hitObject.name);
 
-            // Optional: highlight the object
+            // Optional: highlight the object and manage unhovering
             SelectableObject selectable = hitObject.GetComponent<SelectableObject>();
             if (selectable != null)
             {
-                selectable.OnHover(); // call hover function if it exists
+                if (selectable != lastSelectable)
+                {
+                    if (lastSelectable != null)
+                        lastSelectable.OnUnhover();
+                    selectable.OnHover();
+                    lastSelectable = selectable;
+                }
+            }
+            else
+            {
+                // hit something not selectable -> clear last selectable
+                if (lastSelectable != null)
+                {
+                    lastSelectable.OnUnhover();
+                    lastSelectable = null;
+                }
             }
 
             // Check for player interaction input
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Mouse0)) // this is left mouse button, can be changed later
             {
                 if (selectable != null)
-                    selectable.OnInteract(); // call interaction
+                {
+                    // Call object-level interaction and let the selectable handle  creating the held instance
+                    selectable.OnInteract(playerCamera);
+                }
+            }
+        }
+        else
+        {
+            // Raycast didn't hit anything: ensure previously hovered object is unhovered
+            if (lastSelectable != null)
+            {
+                lastSelectable.OnUnhover();
+                lastSelectable = null;
             }
         }
     }

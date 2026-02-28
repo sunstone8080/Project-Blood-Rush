@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\selectableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\selectableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\playerobjectselection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\playerobjectselection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\raycastselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\raycastselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RayCastSelector.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\RayCastSelector.cs",
+              "RelativeDocumentMoniker": "Assets\\RayCastSelector.cs",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\RayCastSelector.cs",
+              "RelativeToolTip": "Assets\\RayCastSelector.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T15:33:25.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerObjectSelection.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\PlayerObjectSelection.cs",
+              "RelativeDocumentMoniker": "Assets\\PlayerObjectSelection.cs",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\PlayerObjectSelection.cs",
+              "RelativeToolTip": "Assets\\PlayerObjectSelection.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAlwDYAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T14:47:24.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SelectableObject.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\SelectableObject.cs",
+              "RelativeDocumentMoniker": "Assets\\SelectableObject.cs",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\SelectableObject.cs",
+              "RelativeToolTip": "Assets\\SelectableObject.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAmwBwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T14:29:23.71Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
