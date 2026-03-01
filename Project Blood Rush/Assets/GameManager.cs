@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance { get; private set; }
+
+    public enum GameState
     {
-        
+        FreeRoam,
+        Dialogue,
+        Bar,
+        Collection
     }
 
-    // Update is called once per frame
-    void Update()
+    public GameState CurrentGameState = GameState.FreeRoam;
+
+    private void Awake()
     {
-        
+        // Ensure only one instance exists
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Optional: persist between scenes
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

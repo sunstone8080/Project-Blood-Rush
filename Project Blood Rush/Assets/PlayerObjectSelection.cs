@@ -1,70 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerObjectSelection : MonoBehaviour
 {
-    public Camera playerCamera;      // Assign your player camera here
-    public float maxDistance = 10f;  // How far the ray reaches
-    public LayerMask interactableLayer; // Optional: only hit objects on certain layers
+    public Camera playerCamera;
+    public float maxDistance = 2.2f;
+    public LayerMask interactableLayer;
 
-    // track the last selectable the player was looking at so we can call OnUnhover
+    private InputHandler m_InputHandler;
+    private MiniGameManager miniGameManager;
     private SelectableObject lastSelectable;
 
-    private void Update()
+    void Start()
     {
-        RaycastHit hit;
+        m_InputHandler = FindObjectOfType<InputHandler>();
+        miniGameManager = FindObjectOfType<MiniGameManager>();
+    }
 
-        // 1. Create a ray from the center of the screen
+    void Update()
+    {
+        if (miniGameManager == null || playerCamera == null) return;
+
         Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0));
-
-        // 2. Cast the ray
-        if (Physics.Raycast(ray, out hit, maxDistance, interactableLayer))
+        if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, interactableLayer))
         {
-            // 3. We hit something!
-            GameObject hitObject = hit.collider.gameObject;
-            Debug.Log("Looking at: " + hitObject.name);
+            SelectableObject selectable = hit.collider.GetComponent<SelectableObject>();
 
-            // Optional: highlight the object and manage unhovering
-            SelectableObject selectable = hitObject.GetComponent<SelectableObject>();
             if (selectable != null)
             {
                 if (selectable != lastSelectable)
                 {
-                    if (lastSelectable != null)
-                        lastSelectable.OnUnhover();
+                    if (lastSelectable != null) lastSelectable.OnUnhover();
                     selectable.OnHover();
                     lastSelectable = selectable;
                 }
-            }
-            else
-            {
-                // hit something not selectable -> clear last selectable
-                if (lastSelectable != null)
-                {
-                    lastSelectable.OnUnhover();
-                    lastSelectable = null;
-                }
-            }
 
-            // Check for player interaction input
-            if (Input.GetKeyDown(KeyCode.Mouse0)) // this is left mouse button, can be changed later
-            {
-                if (selectable != null)
+                // Start collection mini-game when Mouse0 is pressed
+                if (m_InputHandler.GetLeftMouseDown())
                 {
-                    // Call object-level interaction and let the selectable handle  creating the held instance
-                    selectable.OnInteract(playerCamera);
+                    miniGameManager.StartMiniGameForObject(selectable);
                 }
             }
-        }
-        else
-        {
-            // Raycast didn't hit anything: ensure previously hovered object is unhovered
-            if (lastSelectable != null)
+            else if (lastSelectable != null)
             {
                 lastSelectable.OnUnhover();
                 lastSelectable = null;
             }
+        }
+        else if (lastSelectable != null)
+        {
+            lastSelectable.OnUnhover();
+            lastSelectable = null;
         }
     }
 }
