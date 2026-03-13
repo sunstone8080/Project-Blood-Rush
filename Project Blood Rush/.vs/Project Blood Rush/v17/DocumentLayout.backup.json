@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\selectableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\selectableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\speechbubble.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\speechbubble.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\playerobjectselection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\playerobjectselection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\raycastselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\raycastselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +26,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SpeechBubble.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\SpeechBubble.cs",
+              "RelativeDocumentMoniker": "Assets\\SpeechBubble.cs",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\SpeechBubble.cs",
+              "RelativeToolTip": "Assets\\SpeechBubble.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T22:05:38.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RayCastSelector.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\RayCastSelector.cs",
+              "RelativeDocumentMoniker": "Assets\\RayCastSelector.cs",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\RayCastSelector.cs",
+              "RelativeToolTip": "Assets\\RayCastSelector.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T15:33:25.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerObjectSelection.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\PlayerObjectSelection.cs",
+              "RelativeDocumentMoniker": "Assets\\PlayerObjectSelection.cs",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\PlayerObjectSelection.cs",
+              "RelativeToolTip": "Assets\\PlayerObjectSelection.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAlwDYAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T14:47:24.034Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +72,7 @@
               "RelativeDocumentMoniker": "Assets\\SelectableObject.cs",
               "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\SelectableObject.cs",
               "RelativeToolTip": "Assets\\SelectableObject.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AgIAABYAAAAAAAAAAAAmwBwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-28T14:29:23.71Z",
               "EditorCaption": ""
