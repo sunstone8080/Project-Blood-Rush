@@ -134,6 +134,16 @@ i*= WebglLookSensitivityMultiplier;
     }
     void Update()
     {
-    
+
     }
+    public bool GetInteractPressed()
+    {
+        return Input.GetKeyDown(KeyCode.E);
+    }
+
+    public bool GetExitPressed()
+    {
+        return Input.GetKeyDown(KeyCode.Q);
+    }
+
 }

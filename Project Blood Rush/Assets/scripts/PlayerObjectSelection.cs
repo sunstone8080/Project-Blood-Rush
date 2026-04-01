@@ -21,6 +21,7 @@ public class PlayerObjectSelection : MonoBehaviour
         if (miniGameManager == null || playerCamera == null) return;
 
         Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0));
+
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, interactableLayer))
         {
             SelectableObject selectable = hit.collider.GetComponent<SelectableObject>();
@@ -34,9 +35,9 @@ public class PlayerObjectSelection : MonoBehaviour
                     lastSelectable = selectable;
                 }
 
-                // Start collection mini-game when Mouse0 is pressed
                 if (m_InputHandler.GetLeftMouseDown())
                 {
+                  
                     miniGameManager.StartMiniGameForObject(selectable);
                 }
             }

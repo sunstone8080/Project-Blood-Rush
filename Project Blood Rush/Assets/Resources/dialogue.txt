@@ -1,0 +1,133 @@
+﻿#WEREWOLF_START
+
+Grumpy Werewolf: Prices keep going up. Meat’s half the size, twice the cost.
+Valentina: Yup. Inflation is hitting everyone, even us monsters.
+Grumpy Werewolf: Back in my day, one hunt fed an entire family for a week.
+Grumpy Werewolf: Now everything’s “imported” and “processed”… pathetic.
+Grumpy Werewolf: My grandkids don’t even track prey anymore.
+Grumpy Werewolf: They just sit there saying “67” all the time like WHAT THE HELL DOES THAT EVEN MEAN?
+Valentina: Honestly, I don’t even know either, and I'm chronically online.
+Grumpy Werewolf: World’s not making any sense! And I’m the one expected to keep up?!
+
+#ORDER Finger Float
+Grumpy Werewolf: Finger Float. Strong. None of that watered-down crap.
+Valentina: Sure. No “please” I assume?
+
+#Werewolf_GOOD
+Grumpy Werewolf: …Hmph. Finally, something that tastes like it fights back.
+Valentina: Careful now! That almost sounded like a compliment.
+
+#Werewolf_BAD
+Grumpy Werewolf: Too soft! What is this?! A smoothie?!
+Valentina: Trust me. It’s an improvement.
+
+#Werewolf_WRONG
+Grumpy Werewolf: This isn’t what I ordered. Are you trying to start something?
+Valentina: Oh yeah totally. Because I have nothing better to do.
+
+
+#Zombie_Start
+
+Zombie: I had a job. For, like… a week.
+Zombie: Then there was this party… and then another one…
+Zombie: You ever just not go home for, like, three days?
+Valentina: If I did I would be dead by now.
+Zombie: Oh. right. Anyways, my boss kept trying to call me. I think. My phone died though.
+Zombie: Bills are stacking up but… I don’t think I wanna deal with that right now.
+Zombie: As long as the music’s loud, I don’t really have to think.
+Valentina: Yeah. That’s definitely not gonna blow up in your face any time soon.
+
+#ORDER Cranial Cocktail
+Zombie: Uh… Cranial Cocktail. Extra sweet. Like, really sweet.
+
+#Zombie_GOOD
+Zombie: Ohhh yeah… that hits the spot. I can’t feel my face… wait… oh never can.
+Valentina: Uhhhhhh you’re welcome?
+
+#Zombie_BAD
+Zombie: Ew… bro this ain’t it. I have literally eaten roadkill that tasted better than this.
+Valentina: I know… I’m worried about the wrong thing here but… you eat roadkill?
+
+#Zombie_WRONG
+Zombie: Wait… did I order this? …No, I don’t think so… did I?
+Valentina: I’m impressed you remember ordering anything at all.
+
+
+#Dracula_Start
+
+Dracula: I haven’t rested in days. Not that rest comes easily anymore.
+Valentina: Yeahhh, you and me both man.
+Dracula: The castle needs repairs. The children need feeding.
+Dracula: So I took another job. Imagine that.
+Dracula: Centuries of power… now I answer to a schedule.
+Dracula: My son asked why I’m never home.
+Dracula: I had no answer for him.
+Valentina: Well I can already tell who's going to develop daddy issues.
+
+#ORDER Eyeballiti
+Dracula: A Eyeballiti please. Refined. Balanced. Please don’t mess this up. I’ll cry.
+
+#Dracula_GOOD
+Dracula: …Perfect. For the first time in a while, things feel… manageable.
+Valentina: …I think you might need therapy.
+
+#Dracula_BAD
+Dracula: Unbalanced. Rushed. Like my life.
+Valentina: Uhhh I really hope I’m not your thirteenth reason buddy.
+
+#Dracula_WRONG
+Dracula: Th-this is not what I requested? A-am I just so unlucky?
+Valentina: Yeah I’m starting to think that you are.
+
+
+#MonsterHunter_Start
+
+Monster Hunter: Busy night huh?
+Valentina: Eh, pretty usual if you ask me, I’m used to it.
+Monster Hunter: Predictability. I like that.
+Valentina: Haha. Yeah. So what can I get you?
+Monster Hunter: Just the cheapest drink you got.
+Valentina: …..water?
+Monster Hunter: Perfect!
+
+Monster Hunter: You run this place?
+Valentina: Just the bar. That enough for you?
+Monster Hunter: Usually the bar tells you everything you need to know.
+Valentina: That sounds a little ominous.
+Monster Hunter: Not meant to be. Just observant.
+Monster Hunter: You’ve been here a while then.
+Valentina: Long enough.
+Monster Hunter: So you know how things work.
+Valentina: I know what I need to know.
+Monster Hunter: And the company? They keep things running this smooth?
+Valentina: Why do you care?
+Monster Hunter: Curiosity.
+Valentina: Uh huh. That kind usually comes with a reason.
+Monster Hunter: Sometimes.
+Valentina: You gonna tell me yours?
+Monster Hunter: ...
+Monster Hunter: You seem like you notice things too.
+Valentina: I have to.
+Monster Hunter: Then you’d know if something here was… off.
+Valentina: If it was, I wouldn’t be working here.
+Monster Hunter: Or you’ve learned not to question it.
+Valentina: Or there’s nothing to question.
+Monster Hunter: Riiight. Same people, same hours… not much changes.
+Valentina: That’s kind of the point.
+Monster Hunter: Makes it easier to notice when something does.
+Valentina: That’s a weird thing to say to a bartender.
+Monster Hunter: You’re not just a bartender though.
+Valentina: …You don’t know me.
+Monster Hunter: …Not yet.
+
+#MonsterHunter_GOOD
+Monster Hunter: Hmmm, refreshing.
+Valentina: Yeah. Crazy what water can do.
+
+#MonsterHunter_BAD
+Monster Hunter: Ummm, is this tap by chance?
+Valentina: Would you believe me if I said yes?
+
+#MonsterHunter_WRONG
+Monster Hunter: …This doesn’t look like water.
+Valentina: No dip Sherlock

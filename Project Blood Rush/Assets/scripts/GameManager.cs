@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public enum GameState
     {
         FreeRoam,
-        Dialogue,
+        
         Bar,
         Collection
     }
