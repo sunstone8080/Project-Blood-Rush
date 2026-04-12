@@ -13120,6 +13120,7 @@ GameObject:
   - component: {fileID: 1162076845}
   - component: {fileID: 1162076844}
   - component: {fileID: 1162076846}
+  - component: {fileID: 1162076847}
   m_Layer: 6
   m_Name: vamp_idle_talk
   m_TagString: Untagged
@@ -13217,6 +13218,20 @@ CapsuleCollider:
   m_Height: 10.8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1162076847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162076843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a8c68c25dd1ed4f8e1e8e8118bcee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueFile: {fileID: 4900000, guid: 9b9ada21005d9f445a7cd9841d70fe2d, type: 3}
+  _dialogueUiManager: {fileID: 1306583685}
 --- !u!1001 &1169786207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15066,7 +15081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1306583684}
   - component: {fileID: 1306583685}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DialogueUiManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15108,10 +15123,7 @@ MonoBehaviour:
   nameText: {fileID: 1246092803}
   dialogueText: {fileID: 1865810439}
   playerCamera: {fileID: 963194227}
-  interactableLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  maxDistance: 20
+  dialogueBoxPlaceholder: {fileID: 279752124}
 --- !u!1001 &1314900807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16914,6 +16926,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1466657444}
   - component: {fileID: 1466657443}
+  - component: {fileID: 1466657445}
+  - component: {fileID: 1466657446}
   m_Layer: 0
   m_Name: wolf_idle_talk
   m_TagString: Untagged
@@ -16988,6 +17002,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1637588527}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1466657445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466657442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a8c68c25dd1ed4f8e1e8e8118bcee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueFile: {fileID: 4900000, guid: c1b8a938d690a1642b1a0c6edaabc489, type: 3}
+  _dialogueUiManager: {fileID: 1306583685}
+--- !u!136 &1466657446
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466657442}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Height: 10.8
+  m_Direction: 1
+  m_Center: {x: 0.0000076293945, y: 0, z: -0.000015258789}
 --- !u!1 &1470087070
 GameObject:
   m_ObjectHideFlags: 0
@@ -23609,6 +23660,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1994697937}
   - component: {fileID: 1994697936}
+  - component: {fileID: 1994697938}
+  - component: {fileID: 1994697939}
   m_Layer: 0
   m_Name: zomb_idle_talk
   m_TagString: Untagged
@@ -23683,6 +23736,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1637588527}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1994697938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994697935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a8c68c25dd1ed4f8e1e8e8118bcee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueFile: {fileID: 4900000, guid: 93c276c9b0da0df49b985734dfec0a22, type: 3}
+  _dialogueUiManager: {fileID: 1306583685}
+--- !u!136 &1994697939
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994697935}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Height: 10.800001
+  m_Direction: 1
+  m_Center: {x: 0.0000076293945, y: -0.00000047683716, z: 0.0000076293945}
 --- !u!1 &2013119827
 GameObject:
   m_ObjectHideFlags: 0
@@ -23864,6 +23954,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2065514562}
   - component: {fileID: 2065514561}
+  - component: {fileID: 2065514563}
+  - component: {fileID: 2065514564}
   m_Layer: 0
   m_Name: hunter_idle_talk
   m_TagString: Untagged
@@ -23938,6 +24030,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1637588527}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+--- !u!114 &2065514563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065514560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a8c68c25dd1ed4f8e1e8e8118bcee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueFile: {fileID: 4900000, guid: e45012fdace2afa4e8c89408ec155e9a, type: 3}
+  _dialogueUiManager: {fileID: 1306583685}
+--- !u!136 &2065514564
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065514560}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Height: 10.8
+  m_Direction: 1
+  m_Center: {x: 0.000015258789, y: 0, z: -0.0000038146973}
 --- !u!1001 &2066725032
 PrefabInstance:
   m_ObjectHideFlags: 0
