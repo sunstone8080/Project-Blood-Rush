@@ -6,15 +6,12 @@ Dracula: Centuries of power… now I answer to a schedule.
 Dracula: My son asked why I’m never home.
 Dracula: I had no answer for him.
 Valentina: Well, I can already tell who’s going to develop daddy issues.
-Drink Order
+
+Drink Order: Eyeballiti
+
 Dracula: An Eyeballiti please. Refined. Balanced. Please don’t mess this up. I’ll cry.
+
 Reactions
-Good Drink:
-Dracula: …Perfect. For the first time in a while, things feel… manageable.
-Valentina: ….I think you might need therapy.
-Bad Drink:
-Dracula: Unbalanced. Rushed. Like my life.
-Valentina: Uhhhh, I really hope I’m not your thirteenth reason, buddy.
-Wrong Drink:
-Dracula: Th-this is not what I requested? A-am I just so unlucky?
-Valentina: Yeah, I’m starting to think that you are.
+Good: …Perfect. For the first time in a while, things feel… manageable.
+Bad: Unbalanced. Rushed. Like my life.
+Wrong: Th-this is not what I requested? A-am I just so unlucky?

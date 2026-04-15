@@ -1,32 +1,94 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
+public class NPCFaceController : MonoBehaviour
 {
-    public TextAsset dialogueFile;
+    [Header("Player")]
+    public Transform player;
 
-    public DialogueUiManager _dialogueUiManager;
+    [Header("Rendering")]
+    public SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
-    void Start()
+    [Header("Sprites")]
+    public Sprite frontSprite;
+    public Sprite backSprite;
+    public Sprite sideSprite; // right-facing base
+
+    [Header("Rotation")]
+    public float rotationSpeed = 8f;
+    public bool smoothRotation = true;
+
+    [Header("Angle Thresholds")]
+    public float frontThreshold = 45f;
+    public float backThreshold = 135f;
+
+    private Vector3 baseForward;
+
+    private void Start()
     {
-
+        // store ORIGINAL facing direction
+        baseForward = transform.forward;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (player == null) return;
+
+        FacePlayer();
+        UpdateSprite();
     }
 
-    private void OnMouseDown()
+    void FacePlayer()
     {
-        if (_dialogueUiManager == null)
+        Vector3 direction = player.position - transform.position;
+        direction.y = 0f;
+
+        if (direction.sqrMagnitude < 0.001f) return;
+
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+        if (smoothRotation)
         {
-            Debug.LogError("DialogueUiManager reference is null.");
-            return;
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                Time.deltaTime * rotationSpeed
+            );
         }
-        _dialogueUiManager.StartDialogue(dialogueFile);
+        else
+        {
+            transform.rotation = targetRotation;
+        }
+    }
+
+    void UpdateSprite()
+    {
+        Vector3 dirToPlayer = player.position - transform.position;
+        dirToPlayer.y = 0f;
+
+        if (dirToPlayer.sqrMagnitude < 0.001f) return;
+
+        
+        float angle = Vector3.SignedAngle(baseForward, dirToPlayer, Vector3.up);
+        angle = -angle;
+        float absAngle = Mathf.Abs(angle);
+
+        // FRONT
+        if (absAngle <= frontThreshold)
+        {
+            spriteRenderer.sprite = frontSprite;
+            spriteRenderer.flipX = false;
+        }
+        // BACK
+        else if (absAngle >= backThreshold)
+        {
+            spriteRenderer.sprite = backSprite;
+            spriteRenderer.flipX = false;
+        }
+        // SIDE
+        else
+        {
+            spriteRenderer.sprite = sideSprite;
+            spriteRenderer.flipX = angle < 0f;
+        }
     }
 }

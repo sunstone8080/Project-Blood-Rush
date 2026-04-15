@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Ingred : MonoBehaviour
+public class Ingredient : MonoBehaviour
 {
     public string ingredientName;
     public string test;

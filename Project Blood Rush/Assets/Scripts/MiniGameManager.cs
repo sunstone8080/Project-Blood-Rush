@@ -1,146 +1,204 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class MiniGameManager : MonoBehaviour
 {
-    [Header("UI")]
-    public TMP_Text sequenceText; // TMP for DDR arrows / reticle
+    [Header("Arrow UI")]
+    public GameObject arrowContainerObject;
+    public Transform arrowContainer;
+    public GameObject arrowPrefab;
+
+    [Header("Optional Text Fallback")]
+    public TMP_Text sequenceText;
+
+    [Header("Arrow Sprites")]
+    public Sprite upArrow;
+    public Sprite downArrow;
+    public Sprite leftArrow;
+    public Sprite rightArrow;
 
     [Header("Settings")]
     public int sequenceLength = 5;
 
     private List<string> directionsSequence = new List<string>();
+    private List<GameObject> arrowObjects = new List<GameObject>();
+
     private bool isMiniGameActive = false;
+    private bool isProcessing = false;
 
     private InputHandler inputHandler;
     private GameManager gameManagerInstance;
-
-    // The object we're trying to collect
     private SelectableObject pendingObject;
 
     void Start()
     {
-        gameManagerInstance = GetComponent<GameManager>();
-        inputHandler = GetComponent<InputHandler>();
-
-        if (gameManagerInstance == null)
-            Debug.LogError("No GameManager found on this GameObject!");
-        if (inputHandler == null)
-            Debug.LogError("No InputHandler found on this GameObject!");
+        gameManagerInstance = FindObjectOfType<GameManager>();
+        inputHandler = FindObjectOfType<InputHandler>();
 
         if (sequenceText != null)
             sequenceText.text = "+";
+
+        if (arrowContainerObject != null)
+            arrowContainerObject.SetActive(false);
     }
 
     void Update()
     {
-        // Process DDR inputs if mini-game is active
         if (isMiniGameActive)
             CheckPlayerInput();
     }
 
-    /// <summary>
-    /// Call this to start the mini-game for a specific object.
-    /// </summary>
     public void StartMiniGameForObject(SelectableObject obj)
     {
-        if (isMiniGameActive) return;
+        if (isMiniGameActive || isProcessing || obj == null)
+            return;
 
+        isProcessing = true;
         pendingObject = obj;
 
-        if (gameManagerInstance != null)
-            gameManagerInstance.CurrentGameState = GameManager.GameState.Collection;
+        Ingredient ingredient = obj.GetComponent<Ingredient>();
 
-        isMiniGameActive = true;
-        directionsSequence.Clear();
+        if (ingredient == null)
+        {
+            isProcessing = false;
+            obj.OnInteract(Camera.main);
+            return;
+        }
 
+        if (ingredient.isBaseIngredient)
+        {
+            if (gameManagerInstance != null)
+                gameManagerInstance.CurrentGameState = GameManager.GameState.Collection;
+
+            isMiniGameActive = true;
+            directionsSequence.Clear();
+
+            if (arrowContainerObject != null)
+                arrowContainerObject.SetActive(true);
+
+            GenerateSequence();
+            UpdateSequenceDisplay();
+        }
+        else
+        {
+            CocktailSystem.Instance.AddIngredient(ingredient.ingredientName);
+            obj.OnInteract(Camera.main);
+            isProcessing = false;
+        }
+    }
+
+    private void GenerateSequence()
+    {
         string[] options = { "Up", "Down", "Left", "Right" };
+
         for (int i = 0; i < sequenceLength; i++)
         {
-            string randomDir = options[Random.Range(0, options.Length)];
-            directionsSequence.Add(randomDir);
+            directionsSequence.Add(options[Random.Range(0, options.Length)]);
         }
-
-        UpdateSequenceDisplay();
     }
 
-    void UpdateSequenceDisplay()
+    private void UpdateSequenceDisplay()
     {
-        if (sequenceText == null) return;
+        ClearArrows();
 
-        string display = "";
         foreach (string dir in directionsSequence)
         {
-            switch (dir)
+            GameObject arrowGO = Instantiate(arrowPrefab);
+            arrowGO.transform.SetParent(arrowContainer, false); 
+
+            Image[] images = arrowGO.GetComponentsInChildren<Image>(true);
+
+            Sprite s = GetArrowSprite(dir);
+
+            foreach (Image img in images)
             {
-                case "Up": display += "^ "; break;
-                case "Down": display += "V "; break;
-                case "Left": display += "< "; break;
-                case "Right": display += "> "; break;
+               
+                img.sprite = null;
+                img.color = Color.white;
+                img.enabled = true;
+                img.preserveAspect = true;
+
+              
+                if (s != null)
+                {
+                    img.sprite = s;
+                    break;
+                }
             }
+
+            arrowObjects.Add(arrowGO);
         }
 
-        sequenceText.text = display;
+        if (sequenceText != null)
+            sequenceText.text = "";
     }
 
-    void CheckPlayerInput()
+    private Sprite GetArrowSprite(string direction)
     {
-        if (inputHandler == null || directionsSequence.Count == 0) return;
-
-    string currentInput = directionsSequence[0];
-    bool correct = false;
-    bool wrongInput = false;
-
-    // Check player input
-    if (currentInput == "Up")
-    {
-        if (inputHandler.GetUpInput()) correct = true;
-        else if (inputHandler.GetDownInput() || inputHandler.getLeftInput() || inputHandler.getRightInput())
-            wrongInput = true;
-    }
-    else if (currentInput == "Down")
-    {
-        if (inputHandler.GetDownInput()) correct = true;
-        else if (inputHandler.GetUpInput() || inputHandler.getLeftInput() || inputHandler.getRightInput())
-            wrongInput = true;
-    }
-    else if (currentInput == "Left")
-    {
-        if (inputHandler.getLeftInput()) correct = true;
-        else if (inputHandler.GetUpInput() || inputHandler.GetDownInput() || inputHandler.getRightInput())
-            wrongInput = true;
-    }
-    else if (currentInput == "Right")
-    {
-        if (inputHandler.getRightInput()) correct = true;
-        else if (inputHandler.GetUpInput() || inputHandler.GetDownInput() || inputHandler.getLeftInput())
-            wrongInput = true;
-    }
-
-    if (wrongInput)
-    {
-        // Player pressed the wrong button -> fail
-        EndMiniGame(false);
-        return;
-    }
-
-    if (correct)
-    {
-        // Remove the first input since it was pressed correctly
-        directionsSequence.RemoveAt(0);
-        UpdateSequenceDisplay();
-
-        // Check if mini-game is complete
-        if (directionsSequence.Count == 0)
+        switch (direction)
         {
-            EndMiniGame(true);
+            case "Up": return upArrow;
+            case "Down": return downArrow;
+            case "Left": return leftArrow;
+            case "Right": return rightArrow;
+            default: return null;
         }
     }
+
+    private void CheckPlayerInput()
+    {
+        if (inputHandler == null || directionsSequence.Count == 0)
+            return;
+
+        string current = directionsSequence[0];
+        bool correct = false;
+        bool wrong = false;
+
+        if (current == "Up")
+        {
+            if (inputHandler.GetUpInput()) correct = true;
+            else if (inputHandler.GetDownInput() || inputHandler.getLeftInput() || inputHandler.getRightInput()) wrong = true;
+        }
+        else if (current == "Down")
+        {
+            if (inputHandler.GetDownInput()) correct = true;
+            else if (inputHandler.GetUpInput() || inputHandler.getLeftInput() || inputHandler.getRightInput()) wrong = true;
+        }
+        else if (current == "Left")
+        {
+            if (inputHandler.getLeftInput()) correct = true;
+            else if (inputHandler.GetUpInput() || inputHandler.GetDownInput() || inputHandler.getRightInput()) wrong = true;
+        }
+        else if (current == "Right")
+        {
+            if (inputHandler.getRightInput()) correct = true;
+            else if (inputHandler.GetUpInput() || inputHandler.GetDownInput() || inputHandler.getLeftInput()) wrong = true;
+        }
+
+        if (wrong)
+        {
+            EndMiniGame(false);
+            return;
+        }
+
+        if (correct)
+        {
+            directionsSequence.RemoveAt(0);
+
+            if (arrowObjects.Count > 0)
+            {
+                Destroy(arrowObjects[0]);
+                arrowObjects.RemoveAt(0);
+            }
+
+            if (directionsSequence.Count == 0)
+                EndMiniGame(true);
+        }
     }
 
-    void EndMiniGame(bool success)
+    private void EndMiniGame(bool success)
     {
         isMiniGameActive = false;
 
@@ -150,14 +208,49 @@ public class MiniGameManager : MonoBehaviour
         if (sequenceText != null)
             sequenceText.text = "+";
 
+        if (arrowContainerObject != null)
+            arrowContainerObject.SetActive(false);
+
+        ClearArrows();
+
         if (success && pendingObject != null)
         {
-            // Give the object to the player
-            pendingObject.OnInteract(Camera.main);
+            Ingredient ingredient = pendingObject.GetComponent<Ingredient>();
+
+            if (ingredient != null)
+            {
+                CocktailSystem.Instance.StartNewDrink(ingredient.ingredientName);
+                pendingObject.OnInteract(Camera.main);
+            }
         }
 
         pendingObject = null;
+        isProcessing = false;
 
         Debug.Log(success ? "Mini-game completed!" : "Mini-game failed!");
+    }
+
+    private void ClearArrows()
+    {
+        foreach (GameObject arrow in arrowObjects)
+        {
+            if (arrow != null)
+                Destroy(arrow);
+        }
+
+        arrowObjects.Clear();
+    }
+
+    private void DisableExtraImages(GameObject arrowGO)
+    {
+        Image[] images = arrowGO.GetComponentsInChildren<Image>(true);
+
+        foreach (Image img in images)
+        {
+            if (img.sprite == null)
+                img.enabled = false;
+            else
+                img.enabled = true;
+        }
     }
 }

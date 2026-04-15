@@ -6,11 +6,14 @@ public class BarTrigger : MonoBehaviour
     private InputHandler inputHandler;
 
     [Header("NPC Dialogue")]
-    public string npcDialogueTag = "WEREWOLF"; // Set in inspector for each NPC
+    public string npcDialogueTag = "WEREWOLF";
+
+    private BarMat barMat;
 
     private void Start()
     {
         inputHandler = FindObjectOfType<InputHandler>();
+        barMat = GetComponent<BarMat>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,9 +37,11 @@ public class BarTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange != null && inputHandler != null && inputHandler.GetInteractPressed())
+        if (playerInRange != null &&
+            inputHandler != null &&
+            inputHandler.GetInteractPressed())
         {
-            playerInRange.EnterBarState();
+            playerInRange.EnterBarState(barMat);
 
             DialogueUiManager ui = FindObjectOfType<DialogueUiManager>();
 

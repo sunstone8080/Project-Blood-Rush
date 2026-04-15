@@ -19,23 +19,41 @@ public class DialogueUiManager : MonoBehaviour
     private string currentSentence;
 
     private bool _isDialogueActive = false;
-    private bool _skipNextClick = false;
 
     private InputHandler _inputHandler;
 
+    // ===== DRINK SYSTEM =====
+    private bool waitingForDrink = false;
+    private string requestedDrink = "";
+
+    private string goodReaction = "";
+    private string badReaction = "";
+    private string wrongReaction = "";
+
     void Start()
     {
-        _inputHandler = GameObject.Find("GameManager").GetComponent<InputHandler>();
+        _inputHandler = FindObjectOfType<InputHandler>();
         dialogueBoxPlaceholder.SetActive(false);
+
+        if (CocktailSystem.Instance != null)
+        {
+            CocktailSystem.Instance.OnDrinkSubmitted += OnDrinkSubmitted;
+        }
     }
 
     void Update()
     {
-        if (_isDialogueActive && _inputHandler.GetLeftMouseDown())
+        if (!_isDialogueActive) return;
+
+        Debug.Log("Dialogue Active + waiting input");
+
+        if (_inputHandler != null && Input.GetMouseButtonDown(0))
         {
-            if (_skipNextClick)
+            Debug.Log("E PRESSED - advancing dialogue");
+
+            if (waitingForDrink)
             {
-                _skipNextClick = false;
+                Debug.Log("Blocked: waiting for drink");
                 return;
             }
 
@@ -43,13 +61,10 @@ public class DialogueUiManager : MonoBehaviour
         }
     }
 
-    // ===== PUBLIC API =====
+    // ===== START =====
     public void StartDialogue(TextAsset dialogue)
     {
-        if (_isDialogueActive) return;
-
         _isDialogueActive = true;
-        _skipNextClick = true;
         dialogueBoxPlaceholder.SetActive(true);
 
         names.Clear();
@@ -57,10 +72,39 @@ public class DialogueUiManager : MonoBehaviour
 
         string[] lines = dialogue.text.Split('\n');
 
-        foreach (string line in lines)
+        bool inReactions = false;
+
+        foreach (string raw in lines)
         {
-            if (line.Contains("Drink Order") || line.Contains("Reactions"))
-                break;
+            string line = raw.Trim();
+            if (string.IsNullOrEmpty(line)) continue;
+
+            if (line.StartsWith("Drink Order:"))
+            {
+                requestedDrink = line.Replace("Drink Order:", "").Trim();
+
+                names.Enqueue("SYSTEM");
+                sentences.Enqueue("[REQUEST_TRIGGER]");
+                continue;
+            }
+
+            if (line.StartsWith("Reactions"))
+            {
+                inReactions = true;
+                continue;
+            }
+
+            if (inReactions)
+            {
+                if (line.StartsWith("Good:"))
+                    goodReaction = line.Replace("Good:", "").Trim();
+                else if (line.StartsWith("Bad:"))
+                    badReaction = line.Replace("Bad:", "").Trim();
+                else if (line.StartsWith("Wrong:"))
+                    wrongReaction = line.Replace("Wrong:", "").Trim();
+
+                continue;
+            }
 
             string[] parts = line.Split(':');
 
@@ -74,14 +118,12 @@ public class DialogueUiManager : MonoBehaviour
         DisplayNextLine();
     }
 
+    // ===== NEXT LINE =====
     public void DisplayNextLine()
     {
         if (isTyping)
         {
-            // finish instantly
-            StopCoroutine(typingCoroutine);
-            dialogueText.text = currentSentence;
-            isTyping = false;
+            Skip();
             return;
         }
 
@@ -94,8 +136,20 @@ public class DialogueUiManager : MonoBehaviour
         nameText.text = names.Dequeue();
         currentSentence = sentences.Dequeue();
 
+        if (currentSentence == "[REQUEST_TRIGGER]")
+        {
+            waitingForDrink = true;
+
+            nameText.text = "Grumpy Werewolf";
+            currentSentence = "Bring me a " + requestedDrink;
+
+            typingCoroutine = StartCoroutine(TypeSentence(currentSentence));
+            return;
+        }
+
         typingCoroutine = StartCoroutine(TypeSentence(currentSentence));
     }
+
     IEnumerator TypeSentence(string sentence)
     {
         isTyping = true;
@@ -110,25 +164,72 @@ public class DialogueUiManager : MonoBehaviour
         isTyping = false;
     }
 
+    // ===== DRINK RESULT =====
+    void OnDrinkSubmitted(string drinkName)
+    {
+        if (!_isDialogueActive || !waitingForDrink) return;
+
+        string normalizedInput = Normalize(drinkName);
+        string normalizedTarget = Normalize(requestedDrink);
+
+        waitingForDrink = false;
+
+        if (normalizedInput == normalizedTarget)
+        {
+            ShowReaction(goodReaction);
+        }
+        else if (drinkName == "Unknown Drink")
+        {
+            ShowReaction(badReaction);
+        }
+        else
+        {
+            ShowReaction(wrongReaction);
+        }
+    }
+
+    void ShowReaction(string reaction)
+    {
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
+
+        isTyping = false;
+
+        nameText.text = "Grumpy Werewolf";
+        dialogueText.text = reaction;
+    }
+
+    // ===== END =====
     public void EndDialogue()
     {
         _isDialogueActive = false;
+        waitingForDrink = false;
         dialogueBoxPlaceholder.SetActive(false);
     }
 
-    // ===== HELPERS FOR PLAYER =====
-    public bool IsTyping()
-    {
-        return isTyping;
-    }
+    // ===== HELPERS =====
+    public bool IsTyping() => isTyping;
 
     public void Skip()
     {
         if (isTyping)
         {
-            StopCoroutine(typingCoroutine);
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+                typingCoroutine = null;
+            }
+
             dialogueText.text = currentSentence;
             isTyping = false;
         }
+    }
+
+    private string Normalize(string s)
+    {
+        return s.Replace(" ", "").ToLower();
     }
 }

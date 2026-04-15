@@ -5,6 +5,7 @@ using TMPro;
 
 public class CocktailSystem : MonoBehaviour
 {
+    public event System.Action<string> OnDrinkSubmitted;
     public static CocktailSystem Instance { get; private set; }
 
     [Header("UI Text")]
@@ -28,7 +29,7 @@ public class CocktailSystem : MonoBehaviour
         { "Eyeballiti", new List<string> { "eyeballs", "bloodtonic", "syrup" } },
         { "Cranial Cocktail", new List<string> { "brain", "syrup", "bloodtonic", "orange" } },
         { "Finger Float", new List<string> { "fingers", "tears", "fawnka" } },
-        { "Dark & Growly", new List<string> { "bloodtonic", "tears", "fawnka", "orange" } }
+        { "Dark & Growly", new List<string> { "moonrocks", "tears", "fawnka", "orange" } }
     };
 
     private void Awake()
@@ -91,7 +92,8 @@ public class CocktailSystem : MonoBehaviour
 
         Debug.Log("Submitted: " + result);
 
-        // DialogueManager.Instance.SubmitDrink(result);
+     
+        OnDrinkSubmitted?.Invoke(result);
 
         currentDrink.Clear();
         drinkCompleted = false;
@@ -123,7 +125,18 @@ public class CocktailSystem : MonoBehaviour
             default: return unknownCocktailPrefab;
         }
     }
+    public void ResetDrink()
+    {
+        currentDrink.Clear();
+        drinkCompleted = false;
 
+        UpdateUI();
+
+        Debug.Log("Drink reset.");
+
+        // optional: remove held item if one exists
+        SelectableObject.ReplaceHeldItem(unknownCocktailPrefab, new Vector3(0.85f, -0.35f, 1f));
+    }
     private string GetMatchedRecipe()
     {
         foreach (var recipe in recipes)
@@ -150,15 +163,31 @@ public class CocktailSystem : MonoBehaviour
 
         return true;
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetDrink();
+        }
+    }
     private void UpdateUI()
     {
-        if (cocktailDisplayText == null) return;
+        Debug.Log("UpdateUI called");
 
-        cocktailDisplayText.text =
+        if (cocktailDisplayText == null)
+        {
+            Debug.LogError("UI TEXT IS NULL");
+            return;
+        }
+
+        string text =
             currentDrink.Count == 0
             ? "Cocktail: (empty)"
             : "Cocktail: " + string.Join(", ", currentDrink);
+
+        cocktailDisplayText.text = text;
+
+        Debug.Log("UI SET TO: " + text);
     }
 
     private string Normalize(string s)

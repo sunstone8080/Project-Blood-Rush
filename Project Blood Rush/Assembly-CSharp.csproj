@@ -62,10 +62,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\DialogueUiManager.cs" />
     <Compile Include="Assets\Scripts\NPC.cs" />
+    <Compile Include="Assets\barmat.cs" />
     <Compile Include="Assets\Scripts\BarTrigger.cs" />
     <Compile Include="Assets\Scripts\PlayerObjectSelection.cs" />
     <Compile Include="Assets\Scripts\InputHandler.cs" />
-    <Compile Include="Assets\Scripts\Ingred.cs" />
     <Compile Include="Assets\Scripts\Ingredient.cs" />
     <Compile Include="Assets\Scripts\SelectableObject.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />

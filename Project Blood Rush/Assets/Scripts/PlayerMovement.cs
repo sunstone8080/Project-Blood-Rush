@@ -18,12 +18,11 @@ public class PlayerMovement : MonoBehaviour
     CharacterController m_Controller;
 
     Vector3 m_GroundNormal;
-    private Vector3 M_GroundNormal = Vector3.up;
     float m_CameraVerticalAngle = 0f;
 
-    // ===== BAR SYSTEM =====
-    [SerializeField] private Transform barStandPoint;
-    [SerializeField] private Transform barCameraPoint;
+    // ===== BAR SYSTEM (DYNAMIC) =====
+    private Transform barStandPoint;
+    private Transform barCameraPoint;
 
     private bool isTransitioning = false;
     private bool isExitingBar = false;
@@ -56,28 +55,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // ENTER transition
         if (isTransitioning)
         {
             HandleBarTransition();
             return;
         }
 
-        // EXIT transition
         if (isExitingBar)
         {
             HandleExitBarTransition();
             return;
         }
 
-        // ===== BAR MODE =====
         if (GameManager.Instance.CurrentGameState == GameManager.GameState.Bar)
         {
             HandleBarInput();
             return;
         }
 
-        // ===== FREE ROAM =====
         if (GameManager.Instance.CurrentGameState == GameManager.GameState.FreeRoam)
         {
             HandleCharacterMovement();
@@ -89,7 +84,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (m_InputHandler == null) return;
 
-        // interact / advance dialogue
         if (m_InputHandler.GetInteractPressed())
         {
             if (dialogueUI != null && dialogueUI.IsTyping())
@@ -102,7 +96,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        // exit bar
         if (m_InputHandler.GetExitPressed())
         {
             if (dialogueUI != null)
@@ -112,9 +105,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // ===== ENTER BAR =====
-    public void EnterBarState()
+    // ===== ENTER BAR (NOW ACCEPTS BARMAT) =====
+    public void EnterBarState(BarMat bar)
     {
+        if (bar == null) return;
+
+        barStandPoint = bar.standPoint;
+        barCameraPoint = bar.cameraPoint;
+
         freeRoamReturnPosition = transform.position;
         freeRoamReturnRotation = transform.rotation;
         freeRoamReturnCamRotation = PlayerCamera.transform.rotation;
@@ -182,26 +180,9 @@ public class PlayerMovement : MonoBehaviour
         Vector3 worldspaceMoveInput = transform.TransformVector(m_InputHandler.GetMoveInput());
         Vector3 targetVelocity = worldspaceMoveInput * Speed;
 
-        targetVelocity = GetDirectionReorientedOnSlope(targetVelocity, M_GroundNormal) * targetVelocity.magnitude;
-
         CharacterVelocity = Vector3.Lerp(CharacterVelocity, targetVelocity, MovementSharpness * Time.deltaTime);
         CharacterVelocity += Vector3.down * Gravity * Time.deltaTime;
 
         m_Controller.Move(CharacterVelocity * Time.deltaTime);
-
-        if (m_Controller.isGrounded)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f))
-                m_GroundNormal = hit.normal;
-            else
-                m_GroundNormal = Vector3.up;
-        }
-    }
-
-    public Vector3 GetDirectionReorientedOnSlope(Vector3 direction, Vector3 slopeNormal)
-    {
-        Vector3 directionRight = Vector3.Cross(direction, transform.up);
-        return Vector3.Cross(slopeNormal, directionRight).normalized;
     }
 }

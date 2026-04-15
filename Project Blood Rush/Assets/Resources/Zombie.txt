@@ -6,15 +6,12 @@ Zombie: Oh. Right. Anyways, my boss kept trying to call me. I think. My phone di
 Zombie: Bills are stacking up but… I don’t think I wanna deal with that right now.
 Zombie: As long as the music’s loud, I don’t really have to think.
 Valentina: Yeah. That’s definitely not gonna blow up in your face anytime soon.
-Drink Order
+
+Drink Order: Cranial Cocktail
+
 Zombie: Uh… Cranial Cocktail. Extra sweet. Like, really sweet.
+
 Reactions
-Good Drink:
-Zombie: Ohhh yeah… that hits the spot. I can’t feel my face, wait… oh, I never can.
-Valentina: Uhhhhh, you’re welcome?
-Bad Drink:
-Zombie: Ew… bro, this ain’t it. I have literally eaten roadkill that tasted better than this.
-Valentina: I know I’m worried about the wrong thing here but… you eat roadkill?
-Wrong Drink:
-Zombie: Wait… did I order this? …No, I don’t think so……. Did I?
-Valentina: I’m impressed you remember ordering anything at all.
+Good: Ohhh yeah… that hits the spot. I can’t feel my face, wait… oh, I never can.
+Bad: Ew… bro, this ain’t it. I have literally eaten roadkill that tasted better than this.
+Wrong: Wait… did I order this? …No, I don’t think so……. Did I?

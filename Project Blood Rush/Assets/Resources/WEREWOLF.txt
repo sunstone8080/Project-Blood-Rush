@@ -6,15 +6,12 @@ Grumpy Werewolf: My grandkids don’t even track prey anymore.
 Grumpy Werewolf: They just sit there saying “67” all the time like WHAT THE HELL DOES THAT EVEN MEAN?
 Valentina: Honestly, I don’t even know either, and I’m chronically online.
 Grumpy Werewolf: World’s not making any sense! And I’m the one expected to keep up?
-Drink Order
+
+Drink Order: Finger Float
+
 Grumpy Werewolf: Finger Float. Strong. None of that watered-down crap.
+
 Reactions
-Good Drink:
-Grumpy Werewolf: …Hmph. Finally, something that tastes like it fights back.
-Valentina: Careful now! That almost sounded like a compliment.
-Bad Drink:
-Grumpy Werewolf: Too soft! What is this?! A smoothie?!
-Valentina: Trust me. It’s an improvement.
-Wrong Drink:
-Grumpy Werewolf: This isn’t what I ordered. Are you trying to start something?
-Valentina: Oh yeah, totally. Because I have nothing better to do.
+Good: …Hmph. Finally, something that tastes like it fights back.
+Bad: Too soft! What is this?! A smoothie?!
+Wrong: This isn’t what I ordered. Are you trying to start something?
