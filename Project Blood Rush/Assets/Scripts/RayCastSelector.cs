@@ -2,43 +2,79 @@ using UnityEngine;
 
 public class RaycastSelector : MonoBehaviour
 {
-    public Camera playerCamera;      // Assign your player camera here
-    public float maxDistance = 10f;  // How far the ray reaches
-    public LayerMask interactableLayer; // Only hit objects on these layers
+    public Camera playerCamera;
+    public float maxDistance = 10f;
+    public LayerMask interactableLayer;
 
     private SelectableObject currentlyHighlighted;
 
+    private InteractionUIState uiState = InteractionUIState.None;
+
+    private enum InteractionUIState
+    {
+        None,
+        Hovering
+    }
+
     void Update()
     {
-        Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0));
-        RaycastHit hit;
+        Ray ray = playerCamera.ScreenPointToRay(
+            new Vector3(Screen.width / 2f, Screen.height / 2f, 0));
 
+        RaycastHit hit;
         SelectableObject hitObject = null;
 
-        // Raycast to detect interactable object
         if (Physics.Raycast(ray, out hit, maxDistance, interactableLayer))
         {
             hitObject = hit.collider.GetComponent<SelectableObject>();
         }
 
-        // If the highlighted object changed
+        // =========================
+        // HANDLE HOVER VISUALS
+        // =========================
         if (hitObject != currentlyHighlighted)
         {
-            // Unhighlight previous object
             if (currentlyHighlighted != null)
                 currentlyHighlighted.OnUnhover();
 
-            // Highlight new object
             if (hitObject != null)
                 hitObject.OnHover();
 
             currentlyHighlighted = hitObject;
         }
 
-        // Interact with currently highlighted object
+        // =========================
+        // INTERACTION INPUT
+        // =========================
         if (currentlyHighlighted != null && Input.GetKeyDown(KeyCode.E))
         {
             currentlyHighlighted.OnInteract();
+        }
+
+        // =========================
+        // UI PROMPT LOGIC (FIXED)
+        // =========================
+
+        // Only show hover prompt if something is actually being hit
+        if (hitObject != null)
+        {
+            Debug.Log("1");
+            if (uiState != InteractionUIState.Hovering)
+            {
+                Debug.Log("2");
+                GameManager.Instance.SetPrompt("Click to pick up", 1);
+                uiState = InteractionUIState.Hovering;
+            }
+        }
+        else
+        {
+            Debug.Log("3");
+            if (uiState != InteractionUIState.None)
+            {
+                Debug.Log("4");
+                GameManager.Instance.ClearPrompt();
+                uiState = InteractionUIState.None;
+            }
         }
     }
 }

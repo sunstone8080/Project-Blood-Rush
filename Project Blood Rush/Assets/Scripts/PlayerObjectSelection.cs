@@ -10,6 +10,8 @@ public class PlayerObjectSelection : MonoBehaviour
     private MiniGameManager miniGameManager;
     private SelectableObject lastSelectable;
 
+    private bool isHovering = false;
+
     void Start()
     {
         m_InputHandler = FindObjectOfType<InputHandler>();
@@ -20,36 +22,76 @@ public class PlayerObjectSelection : MonoBehaviour
     {
         if (miniGameManager == null || playerCamera == null) return;
 
-        Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0));
-        if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, interactableLayer))
+        Ray ray = playerCamera.ScreenPointToRay(
+            new Vector3(Screen.width / 2f, Screen.height / 2f, 0));
+
+        bool hitSomething = Physics.Raycast(
+            ray,
+            out RaycastHit hit,
+            maxDistance,
+            interactableLayer
+        );
+
+        SelectableObject selectable = null;
+
+        if (hitSomething)
         {
-            SelectableObject selectable = hit.collider.GetComponent<SelectableObject>();
+            selectable = hit.collider.GetComponent<SelectableObject>();
+        }
+
+        // =========================
+        // HOVER VISUALS
+        // =========================
+        if (selectable != lastSelectable)
+        {
+            if (lastSelectable != null)
+                lastSelectable.OnUnhover();
 
             if (selectable != null)
+                selectable.OnHover();
+
+            lastSelectable = selectable;
+        }
+
+        // =========================
+        // UI PROMPTS (UPDATED)
+        // =========================
+        if (selectable != null)
+        {
+            Ingredient ingredient = selectable.GetComponent<Ingredient>();
+
+            if (!isHovering)
             {
-                if (selectable != lastSelectable)
+                if (ingredient != null && ingredient.isBaseIngredient)
                 {
-                    if (lastSelectable != null) lastSelectable.OnUnhover();
-                    selectable.OnHover();
-                    lastSelectable = selectable;
+                    GameManager.Instance.SetPrompt("Key ingredient - Click to pick up", 1);
+                }
+                else
+                {
+                    GameManager.Instance.SetPrompt("Click to pick up", 1);
                 }
 
-                // Start collection mini-game when Mouse0 is pressed
-                if (m_InputHandler.GetLeftMouseDown())
-                {
-                    miniGameManager.StartMiniGameForObject(selectable);
-                }
-            }
-            else if (lastSelectable != null)
-            {
-                lastSelectable.OnUnhover();
-                lastSelectable = null;
+                isHovering = true;
             }
         }
-        else if (lastSelectable != null)
+        else
         {
-            lastSelectable.OnUnhover();
-            lastSelectable = null;
+            if (isHovering)
+            {
+                GameManager.Instance.ClearPrompt();
+                isHovering = false;
+            }
+        }
+
+        // =========================
+        // MINI GAME INPUT
+        // =========================
+        if (selectable != null && m_InputHandler != null)
+        {
+            if (m_InputHandler.GetLeftMouseDown())
+            {
+                miniGameManager.StartMiniGameForObject(selectable);
+            }
         }
     }
 }

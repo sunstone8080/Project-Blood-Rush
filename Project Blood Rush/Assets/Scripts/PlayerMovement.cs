@@ -123,6 +123,8 @@ public class PlayerMovement : MonoBehaviour
 
         transitionProgress = 0f;
         isTransitioning = true;
+
+        GameManager.Instance.SetPrompt("Press Q to leave", 4);
     }
 
     void HandleBarTransition()
@@ -150,6 +152,8 @@ public class PlayerMovement : MonoBehaviour
 
         transitionProgress = 0f;
         isExitingBar = true;
+
+        GameManager.Instance.ClearPrompt();
     }
 
     void HandleExitBarTransition()

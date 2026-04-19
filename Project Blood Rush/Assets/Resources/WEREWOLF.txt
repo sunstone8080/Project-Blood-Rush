@@ -9,7 +9,7 @@ Grumpy Werewolf: World’s not making any sense! And I’m the one expected to k
 
 Drink Order: Finger Float
 
-Grumpy Werewolf: Finger Float. Strong. None of that watered-down crap.
+Grumpy Werewolf: Finger Float. Strong. None of that watered-down crap. press E to give drink
 
 Reactions
 Good: …Hmph. Finally, something that tastes like it fights back.

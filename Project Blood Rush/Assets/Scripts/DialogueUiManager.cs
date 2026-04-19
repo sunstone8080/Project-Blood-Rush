@@ -5,6 +5,7 @@ using TMPro;
 
 public class DialogueUiManager : MonoBehaviour
 {
+    private PlayerMovement playerMovement;
     public TMP_Text nameText;
     public TMP_Text dialogueText;
     public GameObject dialogueBoxPlaceholder;
@@ -30,10 +31,15 @@ public class DialogueUiManager : MonoBehaviour
     private string badReaction = "";
     private string wrongReaction = "";
 
+    public bool IsWaitingForDrink() => waitingForDrink;
+    public bool IsDialogueActive() => _isDialogueActive;
+
     void Start()
     {
         _inputHandler = FindObjectOfType<InputHandler>();
         dialogueBoxPlaceholder.SetActive(false);
+
+        playerMovement = FindObjectOfType<PlayerMovement>();
 
         if (CocktailSystem.Instance != null)
         {
@@ -45,23 +51,15 @@ public class DialogueUiManager : MonoBehaviour
     {
         if (!_isDialogueActive) return;
 
-        Debug.Log("Dialogue Active + waiting input");
-
         if (_inputHandler != null && Input.GetMouseButtonDown(0))
         {
-            Debug.Log("E PRESSED - advancing dialogue");
-
             if (waitingForDrink)
-            {
-                Debug.Log("Blocked: waiting for drink");
                 return;
-            }
 
             DisplayNextLine();
         }
     }
 
-    // ===== START =====
     public void StartDialogue(TextAsset dialogue)
     {
         _isDialogueActive = true;
@@ -118,7 +116,6 @@ public class DialogueUiManager : MonoBehaviour
         DisplayNextLine();
     }
 
-    // ===== NEXT LINE =====
     public void DisplayNextLine()
     {
         if (isTyping)
@@ -140,10 +137,8 @@ public class DialogueUiManager : MonoBehaviour
         {
             waitingForDrink = true;
 
-            nameText.text = "Grumpy Werewolf";
-            currentSentence = "Bring me a " + requestedDrink;
-
-            typingCoroutine = StartCoroutine(TypeSentence(currentSentence));
+            
+            DisplayNextLine(); 
             return;
         }
 
@@ -164,15 +159,15 @@ public class DialogueUiManager : MonoBehaviour
         isTyping = false;
     }
 
-    // ===== DRINK RESULT =====
+  
     void OnDrinkSubmitted(string drinkName)
     {
         if (!_isDialogueActive || !waitingForDrink) return;
 
+        waitingForDrink = false;
+
         string normalizedInput = Normalize(drinkName);
         string normalizedTarget = Normalize(requestedDrink);
-
-        waitingForDrink = false;
 
         if (normalizedInput == normalizedTarget)
         {
@@ -202,15 +197,19 @@ public class DialogueUiManager : MonoBehaviour
         dialogueText.text = reaction;
     }
 
-    // ===== END =====
     public void EndDialogue()
     {
         _isDialogueActive = false;
         waitingForDrink = false;
         dialogueBoxPlaceholder.SetActive(false);
+
+       
+        if (playerMovement != null)
+        {
+            playerMovement.ExitBarState();
+        }
     }
 
-    // ===== HELPERS =====
     public bool IsTyping() => isTyping;
 
     public void Skip()

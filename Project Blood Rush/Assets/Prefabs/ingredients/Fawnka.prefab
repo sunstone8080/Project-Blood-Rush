@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1013293857850298982}
   - component: {fileID: 6642447972316670054}
   - component: {fileID: 3829437975807785153}
+  - component: {fileID: 3631728070240009271}
+  - component: {fileID: 2593495447254943934}
   m_Layer: 6
   m_Name: Fawnka
   m_TagString: Untagged
@@ -106,3 +108,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 21.6, y: 16.2, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3631728070240009271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988264175843604703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c3c9cf3523abc4e9213d1f5d0892d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientName: fawnka
+  test: 
+  isBaseIngredient: 0
+--- !u!114 &2593495447254943934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988264175843604703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6606413751abbf4787fc7588938c412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldPrefab: {fileID: 3988264175843604703}
+  holdViewportPosition: {x: 0.85, y: -0.35, z: 1}

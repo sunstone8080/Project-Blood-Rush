@@ -92,8 +92,11 @@ public class CocktailSystem : MonoBehaviour
 
         Debug.Log("Submitted: " + result);
 
-     
+      
         OnDrinkSubmitted?.Invoke(result);
+
+       
+        ResetDrink();
 
         currentDrink.Clear();
         drinkCompleted = false;
@@ -127,15 +130,17 @@ public class CocktailSystem : MonoBehaviour
     }
     public void ResetDrink()
     {
+        Debug.Log("ResetDrink called");
+
         currentDrink.Clear();
         drinkCompleted = false;
 
-        UpdateUI();
+        // remove held object
+        SelectableObject.ClearHeldItem();
 
-        Debug.Log("Drink reset.");
-
-        // optional: remove held item if one exists
-        SelectableObject.ReplaceHeldItem(unknownCocktailPrefab, new Vector3(0.85f, -0.35f, 1f));
+        // clear UI completely
+        if (cocktailDisplayText != null)
+            cocktailDisplayText.text = "";
     }
     private string GetMatchedRecipe()
     {
@@ -172,22 +177,17 @@ public class CocktailSystem : MonoBehaviour
     }
     private void UpdateUI()
     {
-        Debug.Log("UpdateUI called");
-
         if (cocktailDisplayText == null)
-        {
-            Debug.LogError("UI TEXT IS NULL");
             return;
+
+        if (currentDrink.Count == 0)
+        {
+            cocktailDisplayText.text = "";
         }
-
-        string text =
-            currentDrink.Count == 0
-            ? "Cocktail: (empty)"
-            : "Cocktail: " + string.Join(", ", currentDrink);
-
-        cocktailDisplayText.text = text;
-
-        Debug.Log("UI SET TO: " + text);
+        else
+        {
+            cocktailDisplayText.text = "Cocktail: " + string.Join(", ", currentDrink) + "\npress R to reset";
+        }
     }
 
     private string Normalize(string s)

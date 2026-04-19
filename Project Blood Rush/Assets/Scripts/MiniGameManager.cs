@@ -105,8 +105,7 @@ public class MiniGameManager : MonoBehaviour
 
         foreach (string dir in directionsSequence)
         {
-            GameObject arrowGO = Instantiate(arrowPrefab);
-            arrowGO.transform.SetParent(arrowContainer, false); 
+            GameObject arrowGO = Instantiate(arrowPrefab, arrowContainer);
 
             Image[] images = arrowGO.GetComponentsInChildren<Image>(true);
 
@@ -114,10 +113,16 @@ public class MiniGameManager : MonoBehaviour
 
             foreach (Image img in images)
             {
-               
-                img.sprite = null;
-                img.color = Color.white;
-                img.enabled = true;
+
+                if (s != null)
+                {
+                    img.sprite = s;
+                    img.enabled = true;
+                }
+                else
+                {
+                    img.enabled = false;
+                }
                 img.preserveAspect = true;
 
               

@@ -6,7 +6,7 @@ public class SelectableObject : MonoBehaviour
 {
     private Renderer objRenderer;
     private Color originalColor;
-
+    public static bool HasHeldObject => s_heldInstance != null;
     [Header("Held Item")]
     [SerializeField] private GameObject heldPrefab;
 
@@ -53,50 +53,20 @@ public class SelectableObject : MonoBehaviour
     {
         if (playerCamera == null)
             playerCamera = Camera.main;
-        if (playerCamera == null)
-        {
-            Debug.LogWarning("SelectableObject.OnInteract: no camera available.");
-            return;
-        }
+        if (playerCamera == null) return;
 
-        // Drop if holding same object
+        // Drop if same object
         if (s_heldSource == this.gameObject && s_heldInstance != null)
         {
-            Destroy(s_heldInstance);
-            s_heldInstance = null;
-            s_heldSource = null;
-
-            if (objRenderer != null)
-                objRenderer.material.color = originalColor;
-
+            ClearHeldItem();
             return;
         }
 
-        // Destroy old held object
-        if (s_heldInstance != null)
-        {
-            Destroy(s_heldInstance);
-            s_heldInstance = null;
-            s_heldSource = null;
-        }
+        ClearHeldItem();
 
         GameObject clone = Instantiate(heldPrefab != null ? heldPrefab : gameObject);
 
-        var selectableOnClone = clone.GetComponentInChildren<SelectableObject>();
-        if (selectableOnClone != null)
-            Destroy(selectableOnClone);
-
-        foreach (var rb in clone.GetComponentsInChildren<Rigidbody>())
-            Destroy(rb);
-
-        foreach (var col in clone.GetComponentsInChildren<Collider>())
-            col.enabled = false;
-
-        foreach (var b in clone.GetComponentsInChildren<MonoBehaviour>())
-            b.enabled = false;
-
-        foreach (var r in clone.GetComponentsInChildren<Renderer>())
-            r.material.color = originalColor;
+        CleanupClone(clone);
 
         clone.transform.SetParent(playerCamera.transform);
         clone.transform.localPosition = holdViewportPosition;
@@ -108,30 +78,8 @@ public class SelectableObject : MonoBehaviour
         s_heldSource = this.gameObject;
     }
 
-    private static void SetLayerRecursive(GameObject go, int layer)
+    private static void CleanupClone(GameObject clone)
     {
-        if (go == null) return;
-        go.layer = layer;
-
-        foreach (Transform child in go.transform)
-            SetLayerRecursive(child.gameObject, layer);
-    }
-
-    //  CALLED BY COCKTAILSYSTEM
-    public static void ReplaceHeldItem(GameObject newPrefab, Vector3 holdPos)
-    {
-        Camera cam = Camera.main;
-        if (cam == null || newPrefab == null) return;
-
-        if (s_heldInstance != null)
-        {
-            Destroy(s_heldInstance);
-            s_heldInstance = null;
-            s_heldSource = null;
-        }
-
-        GameObject clone = Instantiate(newPrefab);
-
         var selectableOnClone = clone.GetComponentInChildren<SelectableObject>();
         if (selectableOnClone != null)
             Destroy(selectableOnClone);
@@ -144,6 +92,38 @@ public class SelectableObject : MonoBehaviour
 
         foreach (var b in clone.GetComponentsInChildren<MonoBehaviour>())
             b.enabled = false;
+    }
+
+    private static void SetLayerRecursive(GameObject go, int layer)
+    {
+        if (go == null) return;
+        go.layer = layer;
+
+        foreach (Transform child in go.transform)
+            SetLayerRecursive(child.gameObject, layer);
+    }
+
+   
+    public static void ClearHeldItem()
+    {
+        if (s_heldInstance != null)
+        {
+            Destroy(s_heldInstance);
+            s_heldInstance = null;
+            s_heldSource = null;
+        }
+    }
+
+    public static void ReplaceHeldItem(GameObject newPrefab, Vector3 holdPos)
+    {
+        Camera cam = Camera.main;
+        if (cam == null || newPrefab == null) return;
+
+        ClearHeldItem();
+
+        GameObject clone = Instantiate(newPrefab);
+
+        CleanupClone(clone);
 
         clone.transform.SetParent(cam.transform);
         clone.transform.localPosition = holdPos;
