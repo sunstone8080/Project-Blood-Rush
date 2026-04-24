@@ -438,7 +438,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ccf0ffff
+      m_ExpandedIDs: 50f2ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -870,9 +870,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 32.4589, y: 2.376097, z: 20.44973}
+    m_Target: {x: 20.621685, y: -3.2495575, z: 19.033428}
     speed: 2
-    m_Value: {x: 32.4589, y: 2.376097, z: 20.44973}
+    m_Value: {x: 20.621685, y: -3.2495575, z: 19.033428}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -918,11 +918,11 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.004087522, y: 0.99295515, z: -0.038764432, w: 0.10907604}
+    m_Target: {x: -0.11024146, y: 0.82476103, z: -0.17340815, w: -0.52646047}
     speed: 2
-    m_Value: {x: 0.0042526587, y: 0.99320537, z: -0.040266346, w: 0.10910378}
+    m_Value: {x: -0.110522725, y: 0.8241291, z: -0.17327596, w: -0.52779865}
   m_Size:
-    m_Target: 6.1361647
+    m_Target: 7.6467776
     speed: 2
     m_Value: 6.1361647
   m_Ortho:
@@ -1004,15 +1004,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: 60
-  m_LastProjectPath: C:\Users\mlmda\Documents\GitHub\Project-Blood-Rush\Project Blood
-    Rush
+  m_LastProjectPath: C:\Users\camil\UnityDisk\Project-Blood-Rush\Project Blood Rush
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: 267d0000
-    m_LastClickedID: 32038
-    m_ExpandedIDs: 00000000267d0000287d00002a7d00002c7d00002e7d0000307d0000327d0000347d0000
+    m_SelectedIDs: 207d0000
+    m_LastClickedID: 32032
+    m_ExpandedIDs: 00000000207d0000227d0000247d0000267d0000287d00002a7d00002c7d00002e7d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1040,7 +1039,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000267d0000287d00002a7d00002c7d00002e7d0000307d0000327d0000347d0000
+    m_ExpandedIDs: 00000000207d0000227d0000247d0000267d0000287d00002a7d00002c7d00002e7d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
