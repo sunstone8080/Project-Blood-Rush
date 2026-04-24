@@ -124,9 +124,7 @@ public class InputHandler : MonoBehaviour
         else
         {
             i *= 0.01f;
-#if UNITY_WEBGL
-i*= WebglLookSensitivityMultiplier;
-#endif
+
         }
         return i;
 

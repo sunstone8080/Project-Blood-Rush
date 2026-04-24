@@ -1,11 +1,12 @@
 Dracula: I haven’t rested in days. Not that rest comes easily anymore.
-Valentina: Yeahhh, you and me both, man.
+Valentina: Yeah… you look like you’ve been carrying a lot.
 Dracula: The castle needs repairs. The children need feeding.
 Dracula: So I took another job. Imagine that.
 Dracula: Centuries of power… now I answer to a schedule.
+Valentina: That’s… a big shift.
 Dracula: My son asked why I’m never home.
 Dracula: I had no answer for him.
-Valentina: Well, I can already tell who’s going to develop daddy issues.
+Valentina: …Yeah. That kind of question sticks.
 
 Drink Order: Eyeballiti
 

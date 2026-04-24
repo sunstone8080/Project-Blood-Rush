@@ -1,12 +1,12 @@
 Monster Hunter: Busy night, huh?
-Valentina: Eh, pretty usual if you ask me. I’m used to it.
+Valentina: Pretty normal. I’m used to it.
 Monster Hunter: Predictability. I like that.
-Valentina: Haha. Yeah. Soooo what can I get you?
+Valentina: Makes things easier to deal with.
 Monster Hunter: Just the cheapest drink you got.
 Valentina: …Water?
-Monster Hunter: Perfect!
+Monster Hunter: Perfect.
 Monster Hunter: You run this place?
-Valentina: Just the bar. That enough for you?
+Valentina: Just the bar.
 Monster Hunter: Usually the bar tells you everything you need to know.
 Valentina: That sounds a little ominous.
 Monster Hunter: Not meant to be. Just observant.
@@ -17,7 +17,7 @@ Valentina: I know what I need to know.
 Monster Hunter: And the company? They keep things running this smooth?
 Valentina: Why do you care?
 Monster Hunter: Curiosity.
-Valentina: Uh huh. That kind usually comes with a reason.
+Valentina: That kind usually comes with a reason.
 Monster Hunter: Sometimes.
 Valentina: You gonna tell me yours?
 Monster Hunter: …
@@ -27,22 +27,15 @@ Monster Hunter: Then you’d know if something here was… off.
 Valentina: If it was, I wouldn’t be working here.
 Monster Hunter: Or you’ve learned not to question it.
 Valentina: Or there’s nothing to question.
-Monster Hunter: Riiight. Same people, same hours… not much changes.
+Monster Hunter: Same people, same hours… not much changes.
 Valentina: That’s kind of the point.
 Monster Hunter: Makes it easier to notice when something does.
-(Beat.)
 Valentina: That’s a weird thing to say to a bartender.
 Monster Hunter: You’re not just a bartender though.
-(Beat.)
 Valentina: …You don’t know me.
 Monster Hunter: …Not yet.
-Reactions
-Good Drink:
+Monster Hunter: Just a water please.
+Valentina: …That’s it?
+Monster Hunter: That’s it.
 Monster Hunter: Hmmm, refreshing.
 Valentina: Yeah. Crazy what water can do.
-Bad Drink:
-Monster Hunter: Ummm, is this tap by chance?
-Valentina: Would you believe me if I said yes?
-Wrong Drink:
-Monster Hunter: …. This doesn’t look like water.
-Valentina: No dip, Sherlock.
