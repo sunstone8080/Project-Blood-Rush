@@ -145,4 +145,9 @@ public class InputHandler : MonoBehaviour
         return Input.GetKeyDown(KeyCode.Q);
     }
 
+    public bool GetPausePressed()
+    {
+        return Input.GetKeyDown(KeyCode.Escape);
+    }
+
 }
