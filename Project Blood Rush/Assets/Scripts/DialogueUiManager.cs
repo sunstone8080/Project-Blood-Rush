@@ -27,9 +27,9 @@ public class DialogueUiManager : MonoBehaviour
     private bool waitingForDrink = false;
     private string requestedDrink = "";
 
-    private string goodReaction = "";
-    private string badReaction = "";
-    private string wrongReaction = "";
+    private List<string> goodReactions = new List<string>();
+    private List<string> badReactions = new List<string>();
+    private List<string> wrongReactions = new List<string>();
 
     public bool IsWaitingForDrink() => waitingForDrink;
     public bool IsDialogueActive() => _isDialogueActive;
@@ -67,6 +67,9 @@ public class DialogueUiManager : MonoBehaviour
 
         names.Clear();
         sentences.Clear();
+        goodReactions.Clear();
+        badReactions.Clear();
+        wrongReactions.Clear();
 
         string[] lines = dialogue.text.Split('\n');
 
@@ -95,12 +98,11 @@ public class DialogueUiManager : MonoBehaviour
             if (inReactions)
             {
                 if (line.StartsWith("Good:"))
-                    goodReaction = line.Replace("Good:", "").Trim();
+                    goodReactions.Add(line.Replace("Good:", "").Trim());
                 else if (line.StartsWith("Bad:"))
-                    badReaction = line.Replace("Bad:", "").Trim();
+                    badReactions.Add(line.Replace("Bad:", "").Trim());
                 else if (line.StartsWith("Wrong:"))
-                    wrongReaction = line.Replace("Wrong:", "").Trim();
-
+                    wrongReactions.Add(line.Replace("Wrong:", "").Trim());
                 continue;
             }
 
@@ -171,19 +173,20 @@ public class DialogueUiManager : MonoBehaviour
 
         if (normalizedInput == normalizedTarget)
         {
-            ShowReaction(goodReaction);
+            ShowReaction(goodReactions);
         }
         else if (drinkName == "Unknown Drink")
         {
-            ShowReaction(badReaction);
+            ShowReaction(badReactions);
         }
         else
         {
-            ShowReaction(wrongReaction);
+            ShowReaction(wrongReactions);
         }
     }
 
-    void ShowReaction(string reaction)
+    // cami note to self: refactor
+    void ShowReaction(List<string> reactionLines)
     {
         if (typingCoroutine != null)
         {
@@ -193,8 +196,28 @@ public class DialogueUiManager : MonoBehaviour
 
         isTyping = false;
 
-        nameText.text = "Grumpy Werewolf";
-        dialogueText.text = reaction;
+        names.Clear();
+        sentences.Clear();
+
+        foreach (string line in reactionLines)
+        {
+            // Split the reaction line by the first colon to get Name and Sentence
+            int colonIndex = line.IndexOf(':');
+            if (colonIndex > 0)
+            {
+                names.Enqueue(line.Substring(0, colonIndex).Trim());
+                sentences.Enqueue(line.Substring(colonIndex + 1).Trim());
+            }
+            else
+            {
+                // Fallback just in case a text file is missing a name tag
+                names.Enqueue("???");
+                sentences.Enqueue(line.Trim());
+            }
+        }
+
+        // Start playing the reaction dialogue
+        DisplayNextLine();
     }
 
     public void EndDialogue()

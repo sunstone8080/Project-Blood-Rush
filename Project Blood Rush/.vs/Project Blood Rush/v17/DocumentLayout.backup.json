@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\scripts\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -43,19 +47,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "InputHandler.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\InputHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InputHandler.cs",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\InputHandler.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InputHandler.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAYwIwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T00:33:06.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\MainMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu.cs",
               "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\MainMenu.cs",
               "RelativeToolTip": "Assets\\Scripts\\MainMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-24T22:39:41.292Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "NPC.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\NPC.cs",
               "RelativeDocumentMoniker": "Assets\\NPC.cs",
@@ -67,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "InputHandler.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\InputHandler.cs",
               "RelativeDocumentMoniker": "Assets\\InputHandler.cs",
@@ -79,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DialogueUiManager.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\DialogueUiManager.cs",
               "RelativeDocumentMoniker": "Assets\\DialogueUiManager.cs",
@@ -90,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "RayCastSelector.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\RayCastSelector.cs",
               "RelativeDocumentMoniker": "Assets\\RayCastSelector.cs",
@@ -102,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PlayerObjectSelection.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\PlayerObjectSelection.cs",
               "RelativeDocumentMoniker": "Assets\\PlayerObjectSelection.cs",
@@ -114,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SelectableObject.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\SelectableObject.cs",
               "RelativeDocumentMoniker": "Assets\\SelectableObject.cs",

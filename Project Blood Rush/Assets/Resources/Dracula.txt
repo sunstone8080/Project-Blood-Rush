@@ -3,16 +3,19 @@ Valentina: Yeah… you look like you’ve been carrying a lot.
 Dracula: The castle needs repairs. The children need feeding.
 Dracula: So I took another job. Imagine that.
 Dracula: Centuries of power… now I answer to a schedule.
-Valentina: That’s… a big shift.
+Valentina: That’s a rough adjustment.
 Dracula: My son asked why I’m never home.
 Dracula: I had no answer for him.
-Valentina: …Yeah. That kind of question sticks.
+Valentina: …That’s a hard one to answer.
 
 Drink Order: Eyeballiti
 
 Dracula: An Eyeballiti please. Refined. Balanced. Please don’t mess this up. I’ll cry. Press E to give drink.
 
 Reactions
-Good: …Perfect. For the first time in a while, things feel… manageable.
-Bad: Unbalanced. Rushed. Like my life.
-Wrong: Th-this is not what I requested? A-am I just so unlucky?
+Good: Dracula: …Perfect. For the first time in a while, things feel… manageable.
+Good: Valentina: I’m glad. Sounds like you needed that.
+Bad: Dracula: Unbalanced. Rushed. Like my life.
+Bad: Valentina: Uhhhh, I really hope I’m not your thirteenth reason, buddy.
+Wrong: Dracula: Th-this is not what I requested? A-am I just so unlucky?
+Wrong: Valentina: Perchance.
