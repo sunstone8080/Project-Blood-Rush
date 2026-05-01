@@ -26276,6 +26276,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2573082568016483441, guid: a8b8af5ccaed4ff478518d07e1ed8f1f, type: 3}
+      propertyPath: isMonsterHunterNPC
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3130283548237043427, guid: a8b8af5ccaed4ff478518d07e1ed8f1f, type: 3}
       propertyPath: m_Name
       value: barmat
