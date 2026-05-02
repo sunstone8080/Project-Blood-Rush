@@ -185,7 +185,6 @@ public class DialogueUiManager : MonoBehaviour
         }
     }
 
-    // cami note to self: refactor
     void ShowReaction(List<string> reactionLines)
     {
         if (typingCoroutine != null)
@@ -201,22 +200,20 @@ public class DialogueUiManager : MonoBehaviour
 
         foreach (string line in reactionLines)
         {
-            // Split the reaction line by the first colon to get Name and Sentence
-            int colonIndex = line.IndexOf(':');
-            if (colonIndex > 0)
+            string[] parts = line.Split(':');
+            if (parts.Length == 2)
             {
-                names.Enqueue(line.Substring(0, colonIndex).Trim());
-                sentences.Enqueue(line.Substring(colonIndex + 1).Trim());
+                names.Enqueue(parts[0].Trim());
+                sentences.Enqueue(parts[1].Trim());
             }
             else
             {
-                // Fallback just in case a text file is missing a name tag
+                // fallback
                 names.Enqueue("???");
                 sentences.Enqueue(line.Trim());
             }
         }
 
-        // Start playing the reaction dialogue
         DisplayNextLine();
     }
 

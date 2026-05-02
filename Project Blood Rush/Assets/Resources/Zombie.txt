@@ -1,18 +1,21 @@
 Zombie: I had a job. For, like… a week.
 Zombie: Then there was this party… and then another one…
 Zombie: You ever just not go home for, like, three days?
-Valentina: Can’t say I have… but I get why you would.
+Valentina: If I did, I would be dead by now.
 Zombie: Anyways, my boss kept trying to call me. I think. My phone died though.
 Zombie: Bills are stacking up but… I don’t think I wanna deal with that right now.
-Valentina: Yeah… it’s easier not to. Until it isn’t.
+Valentina: Yeah. That’s definitely not gonna blow up in your face anytime soon.
 Zombie: As long as the music’s loud, I don’t really have to think.
-Valentina: Fair. Just don’t let it all hit you at once.
+Valentina: Solid long-term strategy.
 
 Drink Order: Cranial Cocktail
 
 Zombie: Uh… Cranial Cocktail. Extra sweet. Like, really sweet. Press E to give drink
 
 Reactions
-Good: Ohhh yeah… that hits the spot. I can’t feel my face, wait… oh, I never can.
-Bad: Ew… bro, this ain’t it. I have literally eaten roadkill that tasted better than this.
-Wrong: Wait… did I order this? …No, I don’t think so……. Did I?
+Good: Zombie: Ohhh yeah… that hits the spot. I can’t feel my face— wait… oh, I never can.
+Good: Valentina: Uhhhhh, you’re welcome?
+Bad: Zombie: Ew… bro, this ain’t it. I have literally eaten roadkill that tasted better than this.
+Bad: Valentina: I know I’m worried about the wrong thing here but… you eat roadkill?
+Wrong: Zombie: Wait… did I order this? …No, I don’t think so…… Did I?
+Wrong: Valentina: I’m impressed you remember ordering anything at all.

@@ -1,10 +1,10 @@
 Monster Hunter: Busy night, huh?
-Valentina: Pretty normal. I’m used to it.
+Valentina: Pretty usual.
 Monster Hunter: Predictability. I like that.
-Valentina: Makes things easier to deal with.
-Monster Hunter: Just the cheapest drink you got.
-Valentina: …Water?
-Monster Hunter: Perfect.
+Valentina: Makes things easier.
+Monster Hunter: Dark ’n Stormy.
+Valentina: …Didn’t take you for that type.
+Monster Hunter: Most people don’t.
 Monster Hunter: You run this place?
 Valentina: Just the bar.
 Monster Hunter: Usually the bar tells you everything you need to know.
@@ -30,12 +30,19 @@ Valentina: Or there’s nothing to question.
 Monster Hunter: Same people, same hours… not much changes.
 Valentina: That’s kind of the point.
 Monster Hunter: Makes it easier to notice when something does.
+
 Valentina: That’s a weird thing to say to a bartender.
 Monster Hunter: You’re not just a bartender though.
+
 Valentina: …You don’t know me.
 Monster Hunter: …Not yet.
-Monster Hunter: Just a water please.
-Valentina: …That’s it?
-Monster Hunter: That’s it.
-Monster Hunter: Hmmm, refreshing.
-Valentina: Yeah. Crazy what water can do.
+
+Drink Order: Dark ’n Stormy
+
+Reactions
+Good: Monster Hunter: Hm. Refreshing.
+Good: Valentina: Simple works.
+Bad: Monster Hunter: Is this tap?
+Bad: Valentina: You’ve got a sharp eye.
+Wrong: Monster Hunter: …This doesn’t look like the Dark 'n Stormy.
+Wrong: Valentina: No, it doesn’t.

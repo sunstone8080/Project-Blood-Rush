@@ -1,19 +1,22 @@
-GGrumpy Werewolf: Prices keep going up. Meat’s half the size, twice the cost.
-Valentina: Yeah… I’ve been hearing that a lot tonight. It’s rough out there.
+Grumpy Werewolf: Prices keep going up. Meat’s half the size, twice the cost.
+Valentina: Yup. Inflation’s hitting everyone, even monsters.
 Grumpy Werewolf: Back in my day, one hunt fed an entire family for a week.
 Grumpy Werewolf: Now everything’s “imported” and “processed”… pathetic.
-Valentina: Yeah… doesn’t feel the same when it’s handed to you.
+Valentina: Guess convenience finally caught up to you.
 Grumpy Werewolf: My grandkids don’t even track prey anymore.
 Grumpy Werewolf: They just sit there saying “67” all the time like WHAT THE HELL DOES THAT EVEN MEAN?
-Valentina: Honestly? No clue. And I’m online way more than I should be.
+Valentina: Honestly, I don’t even know either…and I’m chronically online!
 Grumpy Werewolf: World’s not making any sense! And I’m the one expected to keep up?
-Valentina: Feels like it changed overnight on all of us.
+Valentina: Welcome to the club.
 
 Drink Order: Finger Float
 
-Grumpy Werewolf: Finger Float. Strong. None of that watered-down crap. press E to give drink
+Grumpy Werewolf: Finger Float. Strong. None of that watered-down crap. Press E to give drink
 
 Reactions
-Good: …Hmph. Finally, something that tastes like it fights back.
-Bad: Too soft! What is this?! A smoothie?!
-Wrong: This isn’t what I ordered. Are you trying to start something?
+Good: Grumpy Werewolf: …Hmph. Finally, something that tastes like it fights back.
+Good: Valentina: Took the words right out of your mouth.
+Bad: Grumpy Werewolf: Too soft! What is this?! A smoothie?!
+Bad: Valentina: …Not your thing. Got it.
+Wrong: Grumpy Werewolf: This isn’t what I ordered. Are you trying to start something?
+Wrong: Valentina: If I was, you’d know.

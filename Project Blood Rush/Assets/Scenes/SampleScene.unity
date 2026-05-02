@@ -7645,7 +7645,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &515109178
 RectTransform:
@@ -23921,6 +23921,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3eee0b5bace508a499989deb150c332e, type: 3}
   - {fileID: 8300000, guid: e33eccc0c41a398419ecc358e8b819c4, type: 3}
   - {fileID: 8300000, guid: ec4336c8074d4954f8a5270acade94a0, type: 3}
+  - {fileID: 8300000, guid: ffcabb88b9949a74886408699bbcbf95, type: 3}
+  - {fileID: 8300000, guid: 90bb5d2922cc7a84a91b0ee48a29488e, type: 3}
+  - {fileID: 8300000, guid: d7b41b5d9cd50a240897b6612162de39, type: 3}
+  - {fileID: 8300000, guid: 312a43443ce15e54ca7d058ef6f7e223, type: 3}
+  - {fileID: 8300000, guid: b6147131793ff934c8a49d804dfb53fd, type: 3}
 --- !u!1 &1657239349
 GameObject:
   m_ObjectHideFlags: 0
