@@ -5,21 +5,34 @@ using UnityEngine.Timeline;
 
 public class MusicManager : MonoBehaviour
 {
+    public static MusicManager instance;
+
     public AudioSource musicAudioSource;
     public AudioClip[] tracks;
     private int currentTrackIndex = 0;
-    private bool isPaused = false;
+    public bool isPaused = false;
 
-    // Start is called before the first frame update
+    void Awake()
+    {
+        // Singleton pattern to prevent duplicates
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
-        if (tracks.Length > 0)
+        if (tracks.Length > 0 && !musicAudioSource.isPlaying)
         {
             PlayTrack(currentTrackIndex);
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         // if current song is ending go to next
@@ -31,6 +44,8 @@ public class MusicManager : MonoBehaviour
 
     private void PlayTrack(int index)
     {
+        if (tracks.Length == 0) return;
+
         musicAudioSource.clip = tracks[index];
         musicAudioSource.Play();
         isPaused = false;
@@ -38,33 +53,37 @@ public class MusicManager : MonoBehaviour
 
     public void NextTrack()
     {
-        // loop through tracks with modulus, play next
+        if (tracks.Length == 0) return;
+
         currentTrackIndex = (currentTrackIndex + 1) % tracks.Length;
         PlayTrack(currentTrackIndex);
     }
 
     public void PreviousTrack()
     {
-        // loop through tracks with modulus, play previous
+        if (tracks.Length == 0) return;
+
         currentTrackIndex = (currentTrackIndex - 1 + tracks.Length) % tracks.Length;
         PlayTrack(currentTrackIndex);
     }
 
     public void PauseTrack()
     {
-        if(!isPaused)
+        if (!isPaused)
         {
             musicAudioSource.Pause();
             isPaused = true;
+          
         }
     }
 
     public void ResumeTrack()
     {
-        if(isPaused)
+        if (isPaused)
         {
             musicAudioSource.UnPause();
             isPaused = false;
+            
         }
     }
 }

@@ -4,12 +4,15 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
+    public GameObject pause;
+    public GameObject play;
+    public GameManager.GameState previousState;
     public enum GameState
     {
         FreeRoam,
         Bar,
-        Collection
+        Collection,
+            Paused
     }
 
     public GameState CurrentGameState = GameState.FreeRoam;
@@ -59,9 +62,31 @@ public class GameManager : MonoBehaviour
             interactionText.text = "";
     }
 
-    // Priority guide:
-    // 1 = hover
-    // 2 = npc interaction
-    // 3 = locked state warning
-    // 4 = bar state instruction
+    public void NextTrack()
+    {
+        if (MusicManager.instance != null)
+            MusicManager.instance.NextTrack();
+    }
+
+    public void PreviousTrack()
+    {
+        if (MusicManager.instance != null)
+            MusicManager.instance.PreviousTrack();
+    }
+    public void playTrack()
+    {
+        if (MusicManager.instance != null)
+            MusicManager.instance.ResumeTrack();
+        play.SetActive(false);
+        pause.SetActive(true);
+    }
+
+    public void PauseTrack()
+    {
+        if (MusicManager.instance != null)
+            MusicManager.instance.PauseTrack();
+        play.SetActive(true);
+        pause.SetActive(false);
+        
+    }
 }

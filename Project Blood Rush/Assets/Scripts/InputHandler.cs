@@ -101,11 +101,15 @@ public class InputHandler : MonoBehaviour
 
     public float GetLookInputsHorizontal()
     {
+        if (GameManager.Instance.CurrentGameState == GameManager.GameState.Paused)
+            return 0f;
         return GetMouseOrStickLookAxis("Mouse X", "Look X");
     }
 
     public float GetLookInputsVertical()
     {
+        if (GameManager.Instance.CurrentGameState == GameManager.GameState.Paused)
+            return 0f;
         return GetMouseOrStickLookAxis("Mouse Y", "Look Y");
 
     }

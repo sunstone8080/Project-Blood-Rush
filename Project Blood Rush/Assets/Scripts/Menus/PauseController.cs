@@ -18,46 +18,58 @@ public class PauseController : MonoBehaviour
     private void Update()
     {
         // TEMP using G key, switch to esc for final build
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            TogglePause();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                TogglePause();
+            }
         }
     }
 
     // function that is called when pressing g(temp)/esc(final) no matter what
     public void TogglePause()
     {
-        // If options is open, close it and return to pause menu
+        // If options is open, just close it and stay paused
         if (optionsMenu.activeSelf)
         {
             optionsMenu.SetActive(false);
             return;
         }
 
-        bool isPaused = !pauseMenu.activeSelf;
-        pauseMenu.SetActive(isPaused);
+        bool willPause = !pauseMenu.activeSelf;
 
-        if (isPaused)
+        pauseMenu.SetActive(willPause);
+
+        if (willPause)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             if (crosshair != null) crosshair.enabled = false;
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.previousState = GameManager.Instance.CurrentGameState;
+                GameManager.Instance.CurrentGameState = GameManager.GameState.Paused;
+            }
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             if (crosshair != null) crosshair.enabled = true;
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.CurrentGameState = GameManager.Instance.previousState;
+            }
         }
     }
 
     // function that is called when pressing resume button in pause menu
     public void Resume()
     {
-        pauseMenu.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        if (crosshair != null) crosshair.enabled = true;
+        TogglePause();
     }
 
     public void GoToMainMenu()
