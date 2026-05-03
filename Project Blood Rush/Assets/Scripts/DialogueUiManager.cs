@@ -8,7 +8,7 @@ public class DialogueUiManager : MonoBehaviour
     private PlayerMovement playerMovement;
     public TMP_Text nameText;
     public TMP_Text dialogueText;
-    public GameObject dialogueBoxPlaceholder;
+    public GameObject dialogueBox;
 
     private Queue<string> names = new Queue<string>();
     private Queue<string> sentences = new Queue<string>();
@@ -27,9 +27,16 @@ public class DialogueUiManager : MonoBehaviour
     private bool waitingForDrink = false;
     private string requestedDrink = "";
 
-    private List<string> goodReactions = new List<string>();
-    private List<string> badReactions = new List<string>();
-    private List<string> wrongReactions = new List<string>();
+    private Queue<string> goodReactions = new Queue<string>();
+    private Queue<string> badReactions = new Queue<string>();
+    private Queue<string> wrongReactions = new Queue<string>();
+
+    private List<string> ingredientList = new List<string>();
+
+    [Header("Ingredient List Text")]
+    public TMP_Text drinkTitleText;
+    public TMP_Text listText;
+    [SerializeField] private GameObject notepadUi;
 
     public bool IsWaitingForDrink() => waitingForDrink;
     public bool IsDialogueActive() => _isDialogueActive;
@@ -37,7 +44,7 @@ public class DialogueUiManager : MonoBehaviour
     void Start()
     {
         _inputHandler = FindObjectOfType<InputHandler>();
-        dialogueBoxPlaceholder.SetActive(false);
+        dialogueBox.SetActive(false);
 
         playerMovement = FindObjectOfType<PlayerMovement>();
 
@@ -53,8 +60,8 @@ public class DialogueUiManager : MonoBehaviour
 
         if (_inputHandler != null && Input.GetMouseButtonDown(0))
         {
-            if (waitingForDrink)
-                return;
+            //if (waitingForDrink)
+            //    return;
 
             DisplayNextLine();
         }
@@ -63,7 +70,8 @@ public class DialogueUiManager : MonoBehaviour
     public void StartDialogue(TextAsset dialogue)
     {
         _isDialogueActive = true;
-        dialogueBoxPlaceholder.SetActive(true);
+        dialogueBox.SetActive(true);
+        notepadUi.SetActive(false);
 
         names.Clear();
         sentences.Clear();
@@ -98,11 +106,11 @@ public class DialogueUiManager : MonoBehaviour
             if (inReactions)
             {
                 if (line.StartsWith("Good:"))
-                    goodReactions.Add(line.Replace("Good:", "").Trim());
+                    goodReactions.Enqueue(line.Replace("Good:", "").Trim());
                 else if (line.StartsWith("Bad:"))
-                    badReactions.Add(line.Replace("Bad:", "").Trim());
+                    badReactions.Enqueue(line.Replace("Bad:", "").Trim());
                 else if (line.StartsWith("Wrong:"))
-                    wrongReactions.Add(line.Replace("Wrong:", "").Trim());
+                    wrongReactions.Enqueue(line.Replace("Wrong:", "").Trim());
                 continue;
             }
 
@@ -138,6 +146,7 @@ public class DialogueUiManager : MonoBehaviour
         if (currentSentence == "[REQUEST_TRIGGER]")
         {
             waitingForDrink = true;
+            InitializeIngredientList();
 
             
             DisplayNextLine(); 
@@ -185,18 +194,21 @@ public class DialogueUiManager : MonoBehaviour
         }
     }
 
-    void ShowReaction(List<string> reactionLines)
+    void ShowReaction(Queue<string> reactionLines)
     {
-        if (typingCoroutine != null)
-        {
-            StopCoroutine(typingCoroutine);
-            typingCoroutine = null;
-        }
+        //if (typingCoroutine != null)
+        //{
+        //    StopCoroutine(typingCoroutine);
+        //    typingCoroutine = null;
+        //}
 
-        isTyping = false;
+        //isTyping = false;
 
         names.Clear();
         sentences.Clear();
+
+        dialogueBox.SetActive(true);
+        _isDialogueActive = true;
 
         foreach (string line in reactionLines)
         {
@@ -220,10 +232,11 @@ public class DialogueUiManager : MonoBehaviour
     public void EndDialogue()
     {
         _isDialogueActive = false;
-        waitingForDrink = false;
-        dialogueBoxPlaceholder.SetActive(false);
+        //waitingForDrink = false;
+        dialogueBox.SetActive(false);
+        if (waitingForDrink) notepadUi.SetActive(true);
 
-       
+
         if (playerMovement != null)
         {
             playerMovement.ExitBarState();
@@ -251,4 +264,20 @@ public class DialogueUiManager : MonoBehaviour
     {
         return s.Replace(" ", "").ToLower();
     }
+
+    public void InitializeIngredientList()
+    {
+        if(requestedDrink != "" && waitingForDrink)
+        {
+            ingredientList = CocktailSystem.Instance.GetRecipe(requestedDrink);
+            //notepadUi.SetActive(true);
+            drinkTitleText.text = requestedDrink;
+            listText.text = "";
+            foreach (string ingredient in ingredientList)
+            {
+                listText.text += "\u2022 " + ingredient + "\n";
+            }
+        }
+    }
+
 }

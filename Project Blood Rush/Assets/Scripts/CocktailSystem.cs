@@ -26,10 +26,10 @@ public class CocktailSystem : MonoBehaviour
 
     private Dictionary<string, List<string>> recipes = new Dictionary<string, List<string>>()
     {
-        { "Eyeballiti", new List<string> { "eyeballs", "bloodtonic", "syrup" } },
-        { "Cranial Cocktail", new List<string> { "brain", "syrup", "bloodtonic", "orange" } },
-        { "Finger Float", new List<string> { "fingers", "tears", "fawnka" } },
-        { "Dark & Growly", new List<string> { "moonrocks", "tears", "fawnka", "orange" } }
+        { "Eyeballiti", new List<string> { "Eyeballs", "Bloodtonic", "Syrup" } },
+        { "Cranial Cocktail", new List<string> { "Brain", "Syrup", "Bloodtonic", "Orange" } },
+        { "Finger Float", new List<string> { "Fingers", "Tears", "Fawnka" } },
+        { "Dark & Growly", new List<string> { "Moonrocks", "Tears", "Fawnka", "Orange" } }
     };
 
     private void Awake()
@@ -38,6 +38,17 @@ public class CocktailSystem : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+    }
+
+    public List<string> GetRecipe(string drinkName)
+    {
+        if (Instance == null)
+        {
+            Debug.LogError("CocktailSystem instance not found!");
+            return null;
+        }
+
+        return recipes[drinkName];
     }
 
     public void StartNewDrink(string baseIngredient)

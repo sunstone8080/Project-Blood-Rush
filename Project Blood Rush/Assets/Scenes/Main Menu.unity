@@ -676,7 +676,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1970,6 +1970,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d7b41b5d9cd50a240897b6612162de39, type: 3}
   - {fileID: 8300000, guid: 312a43443ce15e54ca7d058ef6f7e223, type: 3}
   - {fileID: 8300000, guid: b6147131793ff934c8a49d804dfb53fd, type: 3}
+  isPaused: 0
 --- !u!82 &1537457793
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1979,7 +1980,7 @@ AudioSource:
   m_GameObject: {fileID: 1537457791}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -496718159418080568, guid: ae9a1c23bb689804da46519d82391496, type: 2}
   m_audioClip: {fileID: 8300000, guid: 7fd6951d322e14943aed76373e0fe459, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2139,7 +2140,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Chase Davidson: Lead Programmer\nMahtahc Morales: Level Design, Composer\nCami
-    Alacron-Fernandez: Programmer \nNatashia Jurman: Creative Director, UI/UX Designer\nKaliyana
+    Alarcon-Fernandez: Programmer \nNatashia Jurman: Creative Director, UI/UX Designer\nKaliyana
     Limear: 2D/3D Asset Artist (Drinks and Ingredients)\nLizette Bonet: Lead Artist,
     2D artist (Characters and Props)\nSoryanne Weleman: 3D Artist (Static Props and
     Texturing)\nSara Suarez Gutierrez: Concept artist, Writer"
