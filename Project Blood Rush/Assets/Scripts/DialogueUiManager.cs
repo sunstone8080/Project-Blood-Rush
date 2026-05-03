@@ -173,9 +173,11 @@ public class DialogueUiManager : MonoBehaviour
   
     void OnDrinkSubmitted(string drinkName)
     {
-        if (!_isDialogueActive || !waitingForDrink) return;
+        if (!waitingForDrink) return;
 
         waitingForDrink = false;
+
+        notepadUi.SetActive(false);
 
         string normalizedInput = Normalize(drinkName);
         string normalizedTarget = Normalize(requestedDrink);
@@ -265,6 +267,7 @@ public class DialogueUiManager : MonoBehaviour
         return s.Replace(" ", "").ToLower();
     }
 
+    // puts the drink ingredients on the notepad UI
     public void InitializeIngredientList()
     {
         if(requestedDrink != "" && waitingForDrink)

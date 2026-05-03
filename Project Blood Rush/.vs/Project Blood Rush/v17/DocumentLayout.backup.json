@@ -3,28 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\scripts\\cocktailsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cocktailsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\scripts\\bartrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bartrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\scripts\\dialogueuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogueuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\resources\\dracula.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\resources\\dracula.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\resources\\dracula.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\scripts\\bartrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bartrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\scripts\\npc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\npc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\scripts\\musicmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\musicmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|c:\\users\\camil\\unitydisk\\project-blood-rush\\project blood rush\\assets\\scripts\\menus\\settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menus\\settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\scripts\\menus\\optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menus\\optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\resources\\monsterhunter.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\resources\\monsterhunter.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\resources\\werewolf.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\resources\\werewolf.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\resources\\zombie.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\resources\\zombie.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\scripts\\npc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\npc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\scripts\\musicmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\musicmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFA40DCC-7B1D-909C-22E9-0794EF0AE886}|Assembly-CSharp.csproj|C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\assets\\scripts\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,24 +82,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "CocktailSystem.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\CocktailSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CocktailSystem.cs",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\CocktailSystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CocktailSystem.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAmwMIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T17:36:02.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SettingsManager.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\Menus\\SettingsManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Menus\\SettingsManager.cs",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\Menus\\SettingsManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Menus\\SettingsManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T14:34:46.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MonsterHunter.txt",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Resources\\MonsterHunter.txt",
+              "RelativeDocumentMoniker": "Assets\\Resources\\MonsterHunter.txt",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Resources\\MonsterHunter.txt",
+              "RelativeToolTip": "Assets\\Resources\\MonsterHunter.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-05-02T21:07:59.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Zombie.txt",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Resources\\Zombie.txt",
+              "RelativeDocumentMoniker": "Assets\\Resources\\Zombie.txt",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Resources\\Zombie.txt",
+              "RelativeToolTip": "Assets\\Resources\\Zombie.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-05-02T21:05:26.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WEREWOLF.txt",
+              "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Resources\\WEREWOLF.txt",
+              "RelativeDocumentMoniker": "Assets\\Resources\\WEREWOLF.txt",
+              "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Resources\\WEREWOLF.txt",
+              "RelativeToolTip": "Assets\\Resources\\WEREWOLF.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-05-02T21:02:44.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "BarTrigger.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\BarTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BarTrigger.cs",
               "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\BarTrigger.cs",
               "RelativeToolTip": "Assets\\Scripts\\BarTrigger.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAYwEoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwFYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-01T19:53:02.976Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Dracula.txt",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Resources\\Dracula.txt",
               "RelativeDocumentMoniker": "Assets\\Resources\\Dracula.txt",
@@ -92,20 +174,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "DialogueUiManager.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\DialogueUiManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DialogueUiManager.cs",
               "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\DialogueUiManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\DialogueUiManager.cs",
-              "ViewState": "AgIAALYAAAAAAAAAAAAAwL8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAPYAAAAAAAAAAAAmwAABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-01T19:47:37.122Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "NPC.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\NPC.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\NPC.cs",
@@ -113,8 +195,7 @@
               "RelativeToolTip": "Assets\\Scripts\\NPC.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T19:46:51.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T19:46:51.775Z"
             },
             {
               "$type": "Document",
@@ -124,13 +205,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Menus\\OptionsMenu.cs",
               "ToolTip": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\Menus\\OptionsMenu.cs",
               "RelativeToolTip": "Assets\\Scripts\\Menus\\OptionsMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T21:28:42.106Z"
+              "WhenOpened": "2026-04-29T21:28:42.106Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "MusicManager.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\MusicManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MusicManager.cs",
@@ -138,12 +220,11 @@
               "RelativeToolTip": "Assets\\Scripts\\MusicManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T20:44:48.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-29T20:44:48.925Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "InputHandler.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\InputHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InputHandler.cs",
@@ -155,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\Scripts\\MainMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu.cs",
@@ -167,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "InputHandler.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\InputHandler.cs",
               "RelativeDocumentMoniker": "Assets\\InputHandler.cs",
@@ -179,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "DialogueUiManager.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\DialogueUiManager.cs",
               "RelativeDocumentMoniker": "Assets\\DialogueUiManager.cs",
@@ -190,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "RayCastSelector.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\RayCastSelector.cs",
               "RelativeDocumentMoniker": "Assets\\RayCastSelector.cs",
@@ -202,7 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "PlayerObjectSelection.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\PlayerObjectSelection.cs",
               "RelativeDocumentMoniker": "Assets\\PlayerObjectSelection.cs",
@@ -214,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "SelectableObject.cs",
               "DocumentMoniker": "C:\\Users\\camil\\UnityDisk\\Project-Blood-Rush\\Project Blood Rush\\Assets\\SelectableObject.cs",
               "RelativeDocumentMoniker": "Assets\\SelectableObject.cs",
